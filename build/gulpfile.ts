@@ -25,7 +25,7 @@ export default series(
   parallel(
     // 并行执行packages目录下的build脚本
     withTaskName('buildPackages', async () => {
-      await run('pnpm run --filter ./packages --parallel build');
+      await run('pnpm run --filter "@casta-fe-playground/*" build --parallel');
     }),
     // 执行build命令时会调用rollup，给rollup传参数buildFullComponent，那么就会执行导出任务叫buildFullComponent
     withTaskName('buildFullComponent', async () => {

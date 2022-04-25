@@ -9,9 +9,12 @@
     "docs"
   ],
   "scripts": {
+    "cz": "git-cz",
+    "gen:cl": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "bootstrap": "pnpm install",
     "dev": "pnpm -C examples dev",
     "build": "gulp -f build/gulpfile.ts",
+    "build:packages": "gulp -f build/gulpfile.ts",
     "preview": "vite preview",
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",
@@ -30,7 +33,8 @@
     "@casta-fe-playground/stylelint-config": "workspace:*",
     "@casta-fe-playground/theme-chalk": "workspace:*",
     "@casta-fe-playground/utils": "workspace:*",
-    "@vueuse/core": "^6.8.0"
+    "@vueuse/core": "^6.8.0",
+    "cz-conventional-changelog": "^3.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
@@ -82,6 +86,11 @@
   "license": "MIT",
   "engines": {
     "node": ">=14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
