@@ -11,3 +11,9 @@ export const tgRoot = path.resolve(__dirname, "../../packages/casta-fe-playgroun
 
 // 组件目录
 export const compRoot = path.resolve(projectRoot, "packages/components");
+
+// enum dir
+export const enumsRoot = path.resolve(projectRoot, "packages/enums");
+
+// utils dir
+export const utilsRoot = path.resolve(projectRoot, "packages/utils");
