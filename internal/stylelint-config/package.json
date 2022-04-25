@@ -1,0 +1,32 @@
+{
+  "name": "@casta-fe-playground/stylelint-config",
+  "version": "1.0.0",
+  "description": "StyleLint config",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "tag": "stylelint-config"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.1.0",
+    "postcss": "^8.3.11",
+    "postcss-html": "^1.2.0"
+  },
+  "devDependencies": {
+    "stylelint": "^14.1.0",
+    "postcss": "^8.3.11",
+    "postcss-html": "^1.2.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0"
+  }
+}

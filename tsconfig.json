@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "allowJs": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client"],
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "paths": {
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
+    }
+  },
+  "include": [
+    "examples/**/*.ts",
+    "examples/**/*.tsx",
+    "examples/**/*.vue",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "typings/**/*.ts",
+    "typings/**/*.d.ts"
+  ],
+  "exclude": ["node_module", "**/__tests__", "dist/**", "packages/casta-fe-playground/**"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}

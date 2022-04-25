@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["@casta-fe-playground/eslint-config"]
+}
