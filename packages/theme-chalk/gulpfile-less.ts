@@ -12,13 +12,14 @@ import autoprefixer from "gulp-autoprefixer";
 import cleanCss from "gulp-clean-css";
 import less from "gulp-less";
 import path from "path";
-
+import clean from 'gulp-clean';
 /**
  * 对sass文件做处理
  */
 function compileLess() {
   console.log('compileLesscompileLess')
   return src(path.resolve(__dirname, "./src/*.less"))
+    .pipe(clean())
     .pipe(less())
     .pipe(autoprefixer())
     .on("data", (data) => {
@@ -33,11 +34,14 @@ function compileLess() {
 /**
  * 处理font文件
  */
-function copyFonts() {
+// function copyFonts() {
+//   // 从src下单fonts文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的font目录
+//   return src(path.resolve(__dirname, "./src/fonts/**")).pipe(cleanCss()).pipe(dest("./dist/fonts"));
+// }
+function copyLess() {
   // 从src下单fonts文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的font目录
-  return src(path.resolve(__dirname, "./src/fonts/**")).pipe(cleanCss()).pipe(dest("./dist/fonts"));
+  return src(path.resolve(__dirname, "./src/**")).pipe(cleanCss()).pipe(dest("./dist/less"));
 }
-
 /**
  * 把打包好的css输出到根目录的dist
  */
@@ -46,4 +50,6 @@ function copyFullStyle() {
   return src(path.resolve(__dirname, "./dist/**")).pipe(dest(rootDistPath));
 }
 
-export default series(compileLess, copyFonts, copyFullStyle);
+// export default series(compileLess, copyFonts, copyFullStyle);
+export default series(compileLess, copyLess,copyFullStyle);
+
