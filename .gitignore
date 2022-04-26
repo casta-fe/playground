@@ -24,7 +24,7 @@ dist-ssr
 # Package Manager
 node_modules
 .pnpm-debug.log*
-
+packages/**/dist
 # Bundle
 dist
 coverage

@@ -11,6 +11,11 @@ export const buildConfig = {
     },
     bundle: {
       path: "casta-fe-playground/es"
+    },
+    globals: {
+      // 表示使用的vue是全局的
+      vue: "Vue",
+      "ant-design-vue": "ant-design-vue"
     }
   },
   cjs: {
@@ -22,6 +27,11 @@ export const buildConfig = {
     },
     bundle: {
       path: "casta-fe-playground/lib"
+    },
+    globals: {
+      // 表示使用的vue是全局的
+      vue: "Vue",
+      "ant-design-vue": "ant-design-vue"
     }
   }
 };

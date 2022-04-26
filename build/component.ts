@@ -17,6 +17,7 @@ import { Project } from "ts-morph";
 import { pathRewriter, run } from "./utils";
 import { buildConfig } from "./utils/config";
 import { compRoot, outDir, projectRoot } from "./utils/paths";
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const buildEachComponent = async () => {
   // 打包每个组件
@@ -32,15 +33,16 @@ const buildEachComponent = async () => {
     const input = path.resolve(compRoot, file, "index.ts");
     const config = {
       input,
-      plugins: [nodeResolve(), typescript(), vue(), commonjs()],
-      external: (id) => /^vue/.test(id) || /^@casta-fe-playground/.test(id) // 排除掉vue和@w-plus的依赖
+      plugins: [nodeResolve(), typescript(), vue(), vueJsx(), commonjs()],
+      external: (id) => /^vue/.test(id) || /^ant-design-vue/.test(id) ||  /^@casta-fe-playground/.test(id) // 排除掉vue和@w-plus的依赖
     };
     const bundle = await rollup(config);
     const options = Object.values(buildConfig).map((config) => ({
       format: config.format,
       file: path.resolve(config.output.path, `components/${file}/index.js`),
       paths: pathRewriter(config.output.name), // @casta-fe-playground => casta-fe-playground/es casta-fe-playground/lib  处理路径
-      exports: "named"
+      exports: "named",
+      globals: config.globals
     }));
 
     await Promise.all(options.map((option) => bundle.write(option as OutputOptions)));
@@ -135,7 +137,8 @@ async function buildComponentEntry() {
     Object.values(buildConfig)
       .map((config) => ({
         format: config.format,
-        file: path.resolve(config.output.path, "components/index.js")
+        file: path.resolve(config.output.path, "components/index.js"),
+        globals: config.globals
       }))
       .map((config) => bundle.write(config as OutputOptions))
   );
