@@ -34,8 +34,8 @@
   import { toRefs, watch } from "vue";
   import { defineComponent, reactive } from "vue-demi";
   import { defaultProps,defaultEmits } from "./input-number-range";
-  // import { useMessage } from "@casta-fe-playground/hooks/src/web/useMessage";
-  // const { createMessage } = useMessage();
+  import { useMessage } from "@casta-fe-playground/hooks";
+  const { createMessage } = useMessage();
   
   export default defineComponent({
     name: "InputNumberRange",
@@ -59,7 +59,7 @@
       };
       const blurValueMin = () => {
         if (state.min && state.max && state.min > state.max) {
-          // createMessage.warning("最小范围不得大于最大范围");
+          createMessage.warning("最小范围不得大于最大范围");
           emit("change", ["", state.max]);
         }
       };
@@ -70,7 +70,7 @@
       };
       const blurValueMax = () => {
         if (state.min && state.max && state.min > state.max) {
-          // createMessage.warning("最大范围不得小于最小范围");
+          createMessage.warning("最大范围不得小于最小范围");
           emit("change", [state.min, ""]);
         }
       };

@@ -8,5 +8,13 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCase',
     },
+    preprocessorOptions: {
+      less: {
+        modifyVars:{
+          "primary-color": "#3351c7",
+        },
+        javascriptEnabled: true
+      }
+    }
   },
 });

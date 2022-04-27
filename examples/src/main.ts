@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
-import 'ant-design-vue/dist/antd.css';
-import '@casta-fe-playground/theme-chalk/src/index.less';
+import './App.less';
 import TgIcon from '@casta-fe-playground/components/icon1';
 import InputNumberRange from '@casta-fe-playground/components/InputNumberRange';
 import App from './App.vue';

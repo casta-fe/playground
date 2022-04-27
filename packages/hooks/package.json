@@ -1,7 +1,8 @@
 {
   "name": "@casta-fe-playground/hooks",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
+  "module": "index.ts",
   "scripts": {
     "build": "gulp"
   },

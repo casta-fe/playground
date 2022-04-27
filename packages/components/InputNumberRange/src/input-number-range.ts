@@ -5,7 +5,7 @@ export type InputNumberRangeProps={
     minPlaceHolder:InputNumberProps['placeholder'],
     maxPlaceHolder:InputNumberProps['placeholder'],
     size:InputNumberProps['size'],
-    prefixCenter:String,
+    prefixCenter?: string | number | undefined,
     precision:InputNumberProps['precision']
   }
 export const defaultProps={

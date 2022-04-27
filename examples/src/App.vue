@@ -19,10 +19,15 @@ export default defineComponent({
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
   <TgIcon color="red" :size="30" class="tg-icon-dropbox">Icon Test</TgIcon>
   <br />
+  <div class="colorTheme">测试主题变量颜色功能</div>
+  <br />
   <InputNumberRange :value="inputNumberRangeState.value"></InputNumberRange>
 </template>
 
-<style>
+<style lang="less">
+.colorTheme{
+  color:@primary-color;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
