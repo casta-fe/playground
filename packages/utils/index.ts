@@ -167,6 +167,7 @@ export * from "./src/dateUtil";
 export * from "./src/domUtils";
 export * from "./src/is";
 export * from "./src/log";
+export { default as mitt } from "./src/mitt";
 export * from "./src/mitt";
 export * from "./src/propTypes";
 export * from "./src/uuid";
@@ -174,6 +175,15 @@ export * from "./src/uuid";
 // // src/event
 export * from './src/event/index'
 export * from './src/event/useScrollToCenter'
+
+// src/factory
+export * from './src/factory/createAsyncComponent'
+
+// src/file
+export * from './src/file/base64Conver'
+export * from './src/file/download'
+export * from './src/file/TaDownload'
+export * from './src/file/TaFileTypeCode'
 
 // // src/helper
 export * from './src/helper/treeHelper'

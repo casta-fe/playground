@@ -1,0 +1,11 @@
+{
+  "name": "@casta-fe-playground/directives",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "index.ts",
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "",
+  "license": "ISC"
+}

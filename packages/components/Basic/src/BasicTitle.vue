@@ -43,8 +43,7 @@
   ]);
 </script>
 <style lang="less" scoped>
-@import "../../../theme-chalk/src/ant";
-  @import "../../../theme-chalk/src/var";
+  @import "../index.less";
   @prefix-cls: ~"@{namespace}-basic-title";
 
   .@{prefix-cls} {

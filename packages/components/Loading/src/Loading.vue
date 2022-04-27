@@ -1,0 +1,80 @@
+<template>
+  <section
+    class="full-loading"
+    :class="{ absolute, [theme as any]: !!theme }"
+    :style="[background ? `background-color: ${background}` : '']"
+    v-show="loading"
+  >
+    <Spin v-bind="$attrs" :tip="tip" :size="size" :spinning="loading" />
+  </section>
+</template>
+<script lang="ts">
+  import { Spin } from "ant-design-vue";
+  import { defineComponent, PropType } from "vue";
+  import { SizeEnum } from "@casta-fe-playground/enums";
+
+  export default defineComponent({
+    /* eslint-disable-next-line */
+    name: "Loading",
+    components: { Spin },
+    props: {
+      tip: {
+        type: String as PropType<string>,
+        default: ""
+      },
+      size: {
+        type: String as PropType<SizeEnum>,
+        default: SizeEnum.LARGE,
+        validator: (v: SizeEnum): boolean => {
+          return [SizeEnum.DEFAULT, SizeEnum.SMALL, SizeEnum.LARGE].includes(v);
+        }
+      },
+      absolute: {
+        type: Boolean as PropType<boolean>,
+        default: false
+      },
+      loading: {
+        type: Boolean as PropType<boolean>,
+        default: false
+      },
+      background: {
+        type: String as PropType<string>
+      },
+      theme: {
+        type: String as PropType<"dark" | "light">
+      }
+    }
+  });
+</script>
+<style lang="less">
+  @import "../index.less";
+  .full-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240 242 245 / 40%);
+
+    &.absolute {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 300;
+    }
+  }
+
+  html[data-theme="dark"] {
+    .full-loading:not(.light) {
+      background-color: @modal-mask-bg;
+    }
+  }
+
+  .full-loading.dark {
+    background-color: @modal-mask-bg;
+  }
+</style>

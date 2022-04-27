@@ -37,6 +37,7 @@
     "@casta-fe-playground/settings": "workspace:*",
     "@casta-fe-playground/theme-chalk": "workspace:*",
     "@casta-fe-playground/utils": "workspace:*",
+    "@casta-fe-playground/directives": "workspace:*",
     "@casta-fe-playground/components": "workspace:*",
     "@iconify/iconify": "^2.0.4",
     "@vueuse/core": "^6.8.0",

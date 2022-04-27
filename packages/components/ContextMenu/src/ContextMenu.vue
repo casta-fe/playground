@@ -139,12 +139,10 @@
   });
 </script>
 <style lang="less">
-  @import "../../../theme-chalk/src/ant";
-  @import "../../../theme-chalk/src/var";
+  @import "../index.less";
+  
   @default-height: 42px !important;
-
   @small-height: 36px !important;
-
   @large-height: 36px !important;
 
   .item-style {

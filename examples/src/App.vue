@@ -7,9 +7,13 @@
   <TgIcon color="red" :size="30" class="tg-icon-dropbox">Icon Test</TgIcon>
   <Button />
   <TimeLineList></TimeLineList>
+  <BasicTable/>
+  <UseForm/>
 </template>
 
 <script  lang="ts">
+import BasicTable from "./components/Table/Basic.vue"
+import UseForm from "./components/Form/UseForm.vue"
 import Button from "./components/Button.vue";
 import InputNumberRange from "./components/InputNumberRange.vue";
 import TimeLineList from './components/TimeLineList.vue'
@@ -19,7 +23,9 @@ export default defineComponent({
   components:{
     Button,
     InputNumberRange,
-    TimeLineList
+    TimeLineList,
+    BasicTable,
+    UseForm
   },
   setup(){
     return {}
