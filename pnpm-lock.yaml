@@ -2031,7 +2031,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.5
+      vite: 2.9.5_less@4.1.2+sass@1.51.0
       vue: 3.2.33
     dev: true
 

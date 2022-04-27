@@ -6,21 +6,20 @@
       :min="0"
       @change="changeValueMin"
       :size="size"
-      :max="9999999999"
+      :max="max"
       :precision="precision"
       @blur="blurValueMin"
     />
     <Input
       style="width: 30px; border: none; pointer-events: none; background-color: #fff"
       :placeholder="prefixCenter"
-      disabled
+       disabled
       :size="size"
     />
     <InputNumber
       :placeholder="maxPlaceHolder"
       :value="max"
-      :min="0"
-      :max="9999999999"
+      :min="min"
       @change="changeValueMax"
       @blur="blurValueMax"
       :size="size"
@@ -31,78 +30,53 @@
 
 <script lang="ts">
   import { Input, InputNumber } from "ant-design-vue";
-  import { cloneDeep } from "lodash-es";
+  // import { cloneDeep } from "lodash-es";
   import { toRefs, watch } from "vue";
   import { defineComponent, reactive } from "vue-demi";
-  import { useMessage } from "@casta-fe-playground/hooks/web/useMessage";
-  const { createMessage } = useMessage();
+  import { defaultProps,defaultEmits } from "./input-number-range";
+  // import { useMessage } from "@casta-fe-playground/hooks/src/web/useMessage";
+  // const { createMessage } = useMessage();
+  
   export default defineComponent({
-    name: "InputNumberSelect",
+    name: "InputNumberRange",
     components: {
       Input,
       InputNumber
     },
-    props: {
-      value: {
-        type: Array,
-        default: () => []
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      minPlaceHolder: {
-        type: String,
-        default: "请输入数值"
-      },
-      maxPlaceHolder: {
-        type: String,
-        default: "请输入数值"
-      },
-      size: {
-        type: String,
-        default: "default"
-      },
-      prefixCenter: {
-        type: String,
-        default: "~"
-      },
-      precision: {
-        type: Number,
-        default: 4
-      }
-    },
-    emits: ["change", "blur"],
+    props:defaultProps,
+    emits: defaultEmits,
     setup(props, { emit }) {
+      const initPropsValue= props.value?props.value.slice(0):[]
       const state: any = reactive({
-        min: props.value && props.value[0],
-        max: props.value && props.value[1]
+        min: initPropsValue[0],
+        max: initPropsValue[1]
       });
       const changeValueMin = (e) => {
+        console.log('kskdkd')
         state.min = e;
         state.max = state.max;
-        emit("change", [cloneDeep(e), cloneDeep(state.max)]);
+        emit("change", [e, state.max]);
       };
       const blurValueMin = () => {
         if (state.min && state.max && state.min > state.max) {
-          createMessage.warning("最小范围不得大于最大范围");
-          emit("change", ["", cloneDeep(state.max)]);
+          // createMessage.warning("最小范围不得大于最大范围");
+          emit("change", ["", state.max]);
         }
       };
       const changeValueMax = (e) => {
         state.max = e;
         state.min = state.min;
-        emit("change", [cloneDeep(state.min), cloneDeep(e)]);
+        emit("change", [state.min, e]);
       };
       const blurValueMax = () => {
         if (state.min && state.max && state.min > state.max) {
-          createMessage.warning("最大范围不得小于最小范围");
-          emit("change", [cloneDeep(state.min), ""]);
+          // createMessage.warning("最大范围不得小于最小范围");
+          emit("change", [state.min, ""]);
         }
       };
       watch(
         () => props.value,
-        (a, b) => {
+        (a) => {
           state.min = a[0];
           state.max = a[1];
         },

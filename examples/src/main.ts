@@ -1,8 +1,10 @@
 import { createApp } from 'vue';
-import TgIcon from '@casta-fe-playground/components/icon';
+import 'ant-design-vue/dist/antd.css';
+import '@casta-fe-playground/theme-chalk/src/index.less';
+import TgIcon from '@casta-fe-playground/components/icon1';
+import InputNumberRange from '@casta-fe-playground/components/InputNumberRange';
 import App from './App.vue';
-import '@casta-fe-playground/theme-chalk/src/index.scss';
-
 const app = createApp(App);
 app.use(TgIcon);
+app.use(InputNumberRange)
 app.mount('#app');
