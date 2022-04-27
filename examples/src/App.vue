@@ -7,8 +7,12 @@ export default defineComponent({
     const inputNumberRangeState=reactive({
       value:[]
     })
+    const changeInputNumber=(data)=>{
+      inputNumberRangeState.value=data
+    }
     return {
-      inputNumberRangeState
+      inputNumberRangeState,
+      changeInputNumber
     }
   }
 })
@@ -21,7 +25,7 @@ export default defineComponent({
   <br />
   <div class="colorTheme">测试主题变量颜色功能</div>
   <br />
-  <InputNumberRange :value="inputNumberRangeState.value"></InputNumberRange>
+  <InputNumberRange :value="inputNumberRangeState.value" @change="changeInputNumber"></InputNumberRange>
 </template>
 
 <style lang="less">

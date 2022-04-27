@@ -1,10 +1,10 @@
 import {InputNumberProps,} from 'ant-design-vue'
 export type InputNumberRangeProps={
-    value:Array<string|number>,
+    value:Array<number>,
     disabled:InputNumberProps['disabled'],
     minPlaceHolder:InputNumberProps['placeholder'],
     maxPlaceHolder:InputNumberProps['placeholder'],
-    size:InputNumberProps['size'],
+    size?:"small" | "large" | "default" | undefined,
     prefixCenter?: string | number | undefined,
     precision:InputNumberProps['precision']
   }

@@ -4,23 +4,20 @@
       :placeholder="minPlaceHolder"
       :value="min"
       :min="0"
-      @change="changeValueMin"
       :size="size"
-      :max="max"
       :precision="precision"
       @blur="blurValueMin"
     />
     <Input
       style="width: 30px; border: none; pointer-events: none; background-color: #fff"
       :placeholder="prefixCenter"
-       disabled
-      :size="size"
+      disabled
+      size="small"
     />
     <InputNumber
+      :min="0"
       :placeholder="maxPlaceHolder"
       :value="max"
-      :min="min"
-      @change="changeValueMax"
       @blur="blurValueMax"
       :size="size"
       :precision="precision"
@@ -36,7 +33,10 @@
   import { defaultProps,defaultEmits } from "./input-number-range";
   import { useMessage } from "@casta-fe-playground/hooks";
   const { createMessage } = useMessage();
-  
+  export type InputNumberRangeState={
+    min:number|string,
+    max:number|string
+  }
   export default defineComponent({
     name: "InputNumberRange",
     components: {
@@ -47,38 +47,37 @@
     emits: defaultEmits,
     setup(props, { emit }) {
       const initPropsValue= props.value?props.value.slice(0):[]
-      const state: any = reactive({
+    
+      const state = reactive<InputNumberRangeState>({
         min: initPropsValue[0],
         max: initPropsValue[1]
       });
-      const changeValueMin = (e) => {
-        console.log('kskdkd')
-        state.min = e;
-        state.max = state.max;
-        emit("change", [e, state.max]);
-      };
-      const blurValueMin = () => {
-        if (state.min && state.max && state.min > state.max) {
+    
+      const blurValueMin = (e) => {
+        const value=e.target.value
+        if (value && state.max && value > state.max) {
           createMessage.warning("最小范围不得大于最大范围");
-          emit("change", ["", state.max]);
+          emit("change", [null, state.max]);
+        }else{
+          emit("change", [value, state.max]);
         }
       };
-      const changeValueMax = (e) => {
-        state.max = e;
-        state.min = state.min;
-        emit("change", [state.min, e]);
-      };
-      const blurValueMax = () => {
-        if (state.min && state.max && state.min > state.max) {
+     
+      const blurValueMax = (e) => {
+        const value=e.target.value
+        if (state.min && value && state.min > value) {
           createMessage.warning("最大范围不得小于最小范围");
-          emit("change", [state.min, ""]);
+          emit("change", [state.min, null]);
+        }else{
+          emit("change", [state.min, value]);
         }
       };
       watch(
         () => props.value,
-        (a) => {
-          state.min = a[0];
-          state.max = a[1];
+        (newValue) => {
+          const nextValue= newValue?newValue.slice(0):[]
+          state.min = nextValue[0];
+          state.max = nextValue[1];
         },
         {
           deep: true
@@ -86,10 +85,8 @@
       );
 
       return {
-        changeValueMin,
         blurValueMax,
         blurValueMin,
-        changeValueMax,
         ...toRefs(state)
       };
     }
