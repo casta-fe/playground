@@ -7,3 +7,5 @@ export * from "./Icon";
 export * from "./icon1"; // 测试
 export * from "./Scrollbar";
 export * from "./Transition"; // 导出的是函数
+export * from "./TimeLineList"; // 导出的是函数
+

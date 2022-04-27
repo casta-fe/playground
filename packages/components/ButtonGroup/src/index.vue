@@ -115,6 +115,8 @@
 </script>
 
 <style lang="less">
+  @import "../../../theme-chalk/src/var";
+
   .ta-button-group {
     margin-bottom: @gap16;
     position: relative;
