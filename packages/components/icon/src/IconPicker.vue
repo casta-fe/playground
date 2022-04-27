@@ -67,12 +67,12 @@
 <script lang="ts" setup>
   import { useDebounceFn } from "@vueuse/core";
   import { Empty, Input, Pagination, Popover } from "ant-design-vue";
-  import svgIcons from "virtual:svg-icons-names";
+  // import svgIcons from "virtual:svg-icons-names";
   import { ref, unref, watch, watchEffect } from "vue";
   import iconsData from "../data/icons.data";
   import Icon from "./Icon.vue";
   import SvgIcon from "./SvgIcon.vue";
-  import { ScrollContainer } from "/@/components/Container";
+  import { ScrollContainer } from "@casta-fe-playground/components/Container";
   import { useCopyToClipboard } from "@casta-fe-playground/hooks";
   import { useMessage } from "@casta-fe-playground/hooks";
   import { usePagination } from "@casta-fe-playground/hooks";
@@ -96,9 +96,9 @@
     return result;
   }
 
-  function getSvgIcons() {
-    return svgIcons.map((icon) => icon.replace("icon-", ""));
-  }
+  // function getSvgIcons() {
+  //   return svgIcons.map((icon) => icon.replace("icon-", ""));
+  // }
 
   const props = defineProps({
     /* eslint-disable-next-line */
@@ -116,7 +116,8 @@
   const emit = defineEmits(["change", "update:value"]);
 
   const isSvgMode = props.mode === "svg";
-  const icons = isSvgMode ? getSvgIcons() : getIcons();
+  // const icons = isSvgMode ? getSvgIcons() : getIcons();
+  const icons = getIcons();
 
   const currentSelect = ref("");
   const visible = ref(false);
@@ -170,6 +171,8 @@
   }
 </script>
 <style lang="less">
+@import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-icon-picker";
 
   .@{prefix-cls} {

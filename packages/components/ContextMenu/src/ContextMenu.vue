@@ -1,9 +1,9 @@
 <script lang="tsx">
-  import type { ContextMenuItem, ItemContentProps, Axis } from "./typing";
-  import type { FunctionalComponent, CSSProperties } from "vue";
-  import { defineComponent, nextTick, onMounted, computed, ref, unref, onUnmounted } from "vue";
-  import Icon from "/@/components/Icon";
-  import { Menu, Divider } from "ant-design-vue";
+  import { Icon } from "@casta-fe-playground/components/Icon";
+  import { Divider, Menu } from "ant-design-vue";
+  import type { CSSProperties, FunctionalComponent } from "vue";
+  import { computed, defineComponent, nextTick, onMounted, onUnmounted, ref, unref } from "vue";
+  import type { Axis, ContextMenuItem, ItemContentProps } from "./typing";
 
   const prefixCls = "context-menu";
 
@@ -139,6 +139,8 @@
   });
 </script>
 <style lang="less">
+  @import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   @default-height: 42px !important;
 
   @small-height: 36px !important;

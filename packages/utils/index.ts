@@ -178,3 +178,6 @@ export * from './src/event/useScrollToCenter'
 // src/helper
 export * from './src/helper/treeHelper'
 export * from './src/helper/tsxHelper'
+
+// src/lib
+export { default as echarts } from "./src/lib/echarts"

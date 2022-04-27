@@ -17,8 +17,8 @@
   </div>
 </template>
 <script lang="ts">
-  import { addResizeListener, removeResizeListener } from "/@/utils/event";
-  import componentSetting from "/@/settings/componentSetting";
+  import { addResizeListener, removeResizeListener } from "@casta-fe-playground/utils";
+  import { componentSetting } from "@casta-fe-playground/settings";
   const { scrollbar } = componentSetting;
   import { toObject } from "./util";
   import {

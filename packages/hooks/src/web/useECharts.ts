@@ -6,7 +6,7 @@ import { unref, nextTick, watch, computed, ref } from "vue";
 import { useDebounceFn } from "@vueuse/core";
 import { useEventListener } from "../event/useEventListener";
 import { useBreakpoint } from "../event/useBreakpoint";
-import echarts from "/@/utils/lib/echarts";
+import {echarts} from "@casta-fe-playground/utils";
 
 export function useECharts(
   elRef: Ref<HTMLDivElement>,
