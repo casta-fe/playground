@@ -11,13 +11,13 @@ export interface ModalMethods {
 
 type RegisterFn = (modalMethods: ModalMethods, uuid?: string) => void;
 
-export interface ReturnMethods extends ModalMethods {
+export interface ModalReturnMethods extends ModalMethods {
   openModal: <T = any>(props?: boolean, data?: T, openOnSet?: boolean) => void;
   closeModal: () => void;
   getVisible?: ComputedRef<boolean>;
 }
 
-export type UseModalReturnType = [RegisterFn, ReturnMethods];
+export type UseModalReturnType = [RegisterFn, ModalReturnMethods];
 
 export interface ReturnInnerMethods extends ModalMethods {
   closeModal: () => void;
