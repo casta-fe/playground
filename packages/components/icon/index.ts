@@ -1,8 +1,7 @@
-import { withInstall } from '@casta-fe-playground/utils/with-install';
-import Icon from './src/icon.vue';
-import {IconProps} from './src/icon';
+import Icon from "./src/Icon.vue";
+import IconPicker from "./src/IconPicker.vue";
+import SvgIcon from "./src/SvgIcon.vue";
 
-const TgIcon = withInstall(Icon);
+export { Icon, IconPicker, SvgIcon };
 
-export { TgIcon,IconProps };
-export default TgIcon;
+export default Icon;
