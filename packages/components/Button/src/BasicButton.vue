@@ -17,18 +17,20 @@
 </template>
 
 <script lang="ts">
-  import { Button } from "ant-design-vue";
-  import { computed, defineComponent, unref } from "vue";
-  import { buttonProps } from "./props";
-  import Icon from "/@/components/Icon/src/Icon.vue";
-  import { useAttrs } from "/@/hooks/core/useAttrs";
-  // import { usePermission } from "/@/hooks/web/usePermission";
-  export default defineComponent({
-    name: "AButton",
-    inheritAttrs: false
-  });
+// @ts-nocheck
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "BasicButton",
+  inheritAttrs: false
+});
 </script>
 <script lang="ts" setup>
+  import { Button } from "ant-design-vue";
+  import { computed, unref } from "vue";
+  import { buttonProps } from "./props";
+  import { Icon } from "@casta-fe-playground/components/Icon";
+  import { useAttrs } from "@casta-fe-playground/hooks";
+  // import { usePermission } from "/@/hooks/web/usePermission";
   /* eslint-disable-next-line */
   const props = defineProps(buttonProps);
   // get component class

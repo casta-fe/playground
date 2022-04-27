@@ -3,10 +3,9 @@
   import { defineComponent, computed, unref } from "vue";
   import { Tooltip } from "ant-design-vue";
   import { InfoCircleOutlined } from "@ant-design/icons-vue";
-  import { getPopupContainer } from "/@/utils";
-  import { isString, isArray } from "/@/utils/is";
-  import { getSlot } from "/@/utils/helper/tsxHelper";
-  import { useDesign } from "/@/hooks/web/useDesign";
+  import { getPopupContainer } from "@casta-fe-playground/utils";
+  import { isString, isArray } from "@casta-fe-playground/utils";
+  import { getSlot } from "@casta-fe-playground/utils";
 
   const props = {
     /**
@@ -44,7 +43,7 @@
     components: { Tooltip },
     props,
     setup(props, { slots }) {
-      const { prefixCls } = useDesign("basic-help");
+      const prefixCls = "ta-basic-help";
 
       const getTooltipStyle = computed(
         (): CSSProperties => ({ color: props.color, fontSize: props.fontSize })
@@ -92,6 +91,8 @@
   });
 </script>
 <style lang="less">
+@import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-help";
 
   .@{prefix-cls} {

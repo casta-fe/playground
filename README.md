@@ -6,8 +6,9 @@ https://github.com/casta-fe/playground/projects/1
 
 # 组件处理原则
 1. 删掉usedesign 写死ta-
-2. 删掉usei18n 写死中文
-3. 统计一下使用 api、store、permission的组件，如下：
+2. @prefix-cls: ~"@{namespace}-icon-picker"; 删掉 namspace 写死 ta
+3. 删掉usei18n 写死中文
+4. 统计一下使用 api、store、permission的组件，如下：
 # 注意⚠️
 需要特殊处理的组件：含permission、store、api：
 1. 含api fileview TaDownload.ts MemberSelect.vue taupload => prop改成函数: () => xxxapi

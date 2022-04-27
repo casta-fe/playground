@@ -9,7 +9,7 @@
 </template>
 <script lang="ts" setup>
   import { computed } from "vue";
-  import { Icon } from "/@/components/Icon";
+  import { Icon } from "@casta-fe-playground/components/Icon";
 
   const props = defineProps({
     /**
@@ -47,6 +47,8 @@
   });
 </script>
 <style lang="less" scoped>
+@import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-arrow";
 
   .@{prefix-cls} {

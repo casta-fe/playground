@@ -1,13 +1,18 @@
+<!--
+ * @Author: huyb
+ * @Descripttion: Think & Action
+ * @Date: 2021-11-05 10:13:24
+-->
 <template>
   <div class="ta-button-group" @click.stop>
     <div class="ta-button-group-inner" ref="scrollRef">
       <Button
-        v-for="(item, index) in buttons"
+        v-for="(item, index) in filterButton"
         :key="item.value"
         :type="active == item.value ? 'primary' : 'default'"
         @click="clickHandle(item, index, $event)"
         :disabled="item.disabled"
-        :permission="item.permission"
+        :loading="item.loading"
       >
         {{ item.label }}
         <span v-if="item.number != null">（{{ item.number }}）</span>
@@ -18,19 +23,12 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, ref } from "vue";
+  import { computed, defineComponent, ref, watch } from "vue";
   // import { onBeforeRouteUpdate, useRouter } from "vue-router";
-  import Button from "./BasicButton.vue";
-
-  interface ButtonItem {
-    value: string | number;
-    label: string;
-    url?: string;
-    number?: number | null | undefined;
-    disabled?: boolean;
-    permission?: string;
-  }
-
+  import { ButtonItem } from "./type";
+  import { Button } from "@casta-fe-playground/components/Button";
+  import { useScrollToCenter } from "@casta-fe-playground/utils";
+  // import { usePermission } from "/@/hooks/web/usePermission";
   export default defineComponent({
     components: { Button },
     props: {
@@ -57,6 +55,7 @@
           emit("update:active", route.path);
         }
       };
+      const { scrollToCenter } = useScrollToCenter(scrollRef);
       const clickHandle = (data: ButtonItem, index: number, event) => {
         if (data.value == props.active) return;
         if (props.islink) {
@@ -65,6 +64,19 @@
         emit("update:active", data.value);
         emit("btnClick", data);
       };
+
+      watch(
+        () => props.active,
+        (v) => {
+          const buttonIndex = props.buttons.findIndex((btn) => btn.value === v);
+          const buttonEl = (scrollRef.value as ElRef)?.querySelectorAll("button")[buttonIndex];
+          buttonEl && scrollToCenter(buttonEl);
+        },
+        {
+          immediate: true
+        }
+      );
+
       // onBeforeRouteUpdate((data) => {
       //   getButtonValue(data);
       // });
@@ -73,9 +85,30 @@
       };
       pageInit();
 
+      // const { getPermissions } = usePermission();
+      // const permissions = getPermissions();
+
+      const filterButton = computed(() =>
+        props.buttons.filter((btn) => {
+          if (!btn.permission) return true;
+          // return permissions.value[btn.permission]?.ifShow;
+          return true;
+        })
+      );
+
+      if (props.buttons.length !== filterButton.value.length) {
+        const nextBtn = filterButton.value[0];
+        if (nextBtn) {
+          clickHandle(nextBtn, 0, undefined);
+        } else {
+          emit("update:active", -1);
+        }
+      }
+
       return {
         scrollRef,
-        clickHandle
+        clickHandle,
+        filterButton
       };
     }
   });
@@ -84,20 +117,21 @@
 <style lang="less">
   .ta-button-group {
     margin-bottom: @gap16;
+    position: relative;
 
     &-inner {
       white-space: nowrap;
       max-width: 100%;
       overflow-y: hidden;
       overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .ant-btn {
       border-radius: 32px !important;
-    }
-
-    .ant-btn + .ant-btn {
-      margin-left: 16px;
     }
 
     .ant-btn-default {

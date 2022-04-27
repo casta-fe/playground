@@ -101,6 +101,8 @@
   });
 </script>
 <style lang="less">
+@import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   .app-iconify {
     display: inline-block;
     // vertical-align: middle;
