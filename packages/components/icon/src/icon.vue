@@ -34,7 +34,7 @@
   export default defineComponent({
     /* eslint-disable-next-line */
     name: "Icon",
-    components: { SvgIcon },
+    components: { SvgIcon, BasicButton },
     props: {
       // icon name
       icon: propTypes.string,

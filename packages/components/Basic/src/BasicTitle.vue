@@ -9,8 +9,7 @@
   import type { PropType } from "vue";
   import { computed, useSlots } from "vue";
   import BasicHelp from "./BasicHelp.vue";
-  import { Icon } from "/@/components/Icon";
-  import { useDesign } from "/@/hooks/web/useDesign";
+  import { Icon } from "@casta-fe-playground/components/Icon";
 
   const props = defineProps({
     /**
@@ -35,7 +34,7 @@
     normal: { type: Boolean }
   });
 
-  const { prefixCls } = useDesign("basic-title");
+  const prefixCls = "ta-basic-title";
   const slots = useSlots();
   const getClass = computed(() => [
     prefixCls,

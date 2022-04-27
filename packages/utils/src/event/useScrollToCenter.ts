@@ -1,5 +1,5 @@
 import { Ref } from "vue";
-import { useScrollTo } from "@casta-fe-playground/hooks/src/event/useScrollTo";
+import { useScrollTo } from "@casta-fe-playground/hooks";
 
 export const useScrollToCenter = (
   scrollRef: Ref<ElRef | ComponentElRef>,

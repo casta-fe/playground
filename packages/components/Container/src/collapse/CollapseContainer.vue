@@ -29,9 +29,9 @@
   import { Skeleton } from "ant-design-vue";
   import { CollapseTransition } from "@casta-fe-playground/components/Transition";
   import CollapseHeader from "./CollapseHeader.vue";
-  import { triggerWindowResize } from "@casta-fe-playground/utils/src/event";
+  import { triggerWindowResize } from "@casta-fe-playground/utils";
   // hook
-  import { useTimeoutFn } from "@casta-fe-playground/hooks/src/core/useTimeout";
+  import { useTimeoutFn } from "@casta-fe-playground/hooks";
 
   const props = defineProps({
     title: { type: String, default: "" },

@@ -1,5 +1,5 @@
 import { ref, computed, ComputedRef, unref } from "vue";
-import { useEventListener } from "@casta-fe-playground/hooks/src/event/useEventListener";
+import { useEventListener } from "./useEventListener";
 import { screenMap, sizeEnum, screenEnum } from "@casta-fe-playground/enums";
 
 let globalScreenRef: ComputedRef<sizeEnum | undefined>;

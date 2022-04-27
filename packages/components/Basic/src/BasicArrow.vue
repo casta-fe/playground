@@ -9,7 +9,7 @@
 </template>
 <script lang="ts" setup>
   import { computed } from "vue";
-  import { Icon } from "/@/components/Icon";
+  import { Icon } from "@casta-fe-playground/components/Icon";
 
   const props = defineProps({
     /**

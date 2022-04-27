@@ -170,3 +170,11 @@ export * from "./src/log";
 export * from "./src/mitt";
 export * from "./src/propTypes";
 export * from "./src/uuid";
+
+// src/event
+export * from './src/event/index'
+export * from './src/event/useScrollToCenter'
+
+// src/helper
+export * from './src/helper/treeHelper'
+export * from './src/helper/tsxHelper'

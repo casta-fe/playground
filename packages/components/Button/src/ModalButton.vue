@@ -19,7 +19,8 @@
   import { computed, defineComponent, h, unref } from "vue";
   import Button from "./BasicButton.vue";
   import Icon from "/@/components/Icon/src/Icon.vue";
-  import { useAttrs } from "/@/hooks/core/useAttrs";
+  import { useAttrs } from "@casta-fe-playground/hooks";
+
 
   const props = {
     isInDropDown: {

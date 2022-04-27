@@ -73,10 +73,10 @@
   import Icon from "./Icon.vue";
   import SvgIcon from "./SvgIcon.vue";
   import { ScrollContainer } from "/@/components/Container";
-  import { useCopyToClipboard } from "/@/hooks/web/useCopyToClipboard";
-  import { useMessage } from "/@/hooks/web/useMessage";
-  import { usePagination } from "/@/hooks/web/usePagination";
-  import { propTypes } from "/@/utils/propTypes";
+  import { useCopyToClipboard } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/hooks";
+  import { usePagination } from "@casta-fe-playground/hooks";
+  import { propTypes } from "@casta-fe-playground/utils";
 
   // 没有使用别名引入，是因为WebStorm当前版本还不能正确识别，会报unused警告
   const AInput = Input;
