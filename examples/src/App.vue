@@ -1,39 +1,29 @@
-<script  lang="ts">
-import { defineComponent, reactive } from 'vue';
-// import HelloWorld from './components/HelloWorld.vue';
-export default defineComponent({
-  name:"App",
-  setup(){
-    const inputNumberRangeState=reactive({
-      value:[]
-    })
-    return {
-      inputNumberRangeState
-    }
-  }
-})
-</script>
-
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-  <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <TgIcon color="red" :size="30" class="tg-icon-dropbox">Icon Test</TgIcon>
-  <br />
+  <h1 style="text-align: center;">Casta-fe-playground TEST</h1>
   <div class="colorTheme">测试主题变量颜色功能</div>
   <br />
-  <InputNumberRange :value="inputNumberRangeState.value"></InputNumberRange>
+  <TgIcon color="red" :size="30" class="tg-icon-dropbox">Icon Test</TgIcon>
+  <br />
+  <Button />
+  <InputNumberRange />
 </template>
 
+<script lang="ts">
+  import { defineComponent } from "vue";
+  import Button from "./components/Button.vue";
+  import InputNumberRange from "./components/InputNumberRange.vue";
+
+  export default defineComponent({
+    name: "App",
+    components: { Button, InputNumberRange },
+    setup() {
+      return {};
+    }
+  });
+</script>
+
 <style lang="less">
-.colorTheme{
-  color:@primary-color;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .colorTheme {
+    color: @primary-color;
+  }
 </style>
