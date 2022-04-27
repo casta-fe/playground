@@ -8,6 +8,7 @@ importers:
       '@ant-design/icons-vue': ^6.0.1
       '@antv/g6': 4.5.0
       '@casta-fe-playground/components': workspace:*
+      '@casta-fe-playground/directives': workspace:*
       '@casta-fe-playground/enums': workspace:*
       '@casta-fe-playground/eslint-config': workspace:*
       '@casta-fe-playground/hooks': workspace:*
@@ -107,6 +108,7 @@ importers:
       '@ant-design/icons-vue': 6.1.0_vue@3.2.33
       '@antv/g6': 4.5.0
       '@casta-fe-playground/components': link:packages/components
+      '@casta-fe-playground/directives': link:packages/directives
       '@casta-fe-playground/enums': link:packages/enums
       '@casta-fe-playground/eslint-config': link:internal/eslint-config
       '@casta-fe-playground/hooks': link:packages/hooks
@@ -263,10 +265,13 @@ importers:
   examples:
     specifiers:
       '@vitejs/plugin-vue': ^2.3.0
+      ant-design-vue: ^3.2.2
       typescript: ^4.5.4
       vite: ^2.9.0
       vue: ^3.2.25
       vue-tsc: ^0.29.8
+    dependencies:
+      ant-design-vue: 3.2.2_vue@3.2.33
     devDependencies:
       '@vitejs/plugin-vue': 2.3.1_vite@2.9.6+vue@3.2.33
       typescript: 4.6.3
@@ -324,6 +329,9 @@ importers:
     specifiers: {}
 
   packages/components:
+    specifiers: {}
+
+  packages/directives:
     specifiers: {}
 
   packages/enums:
@@ -2496,6 +2504,31 @@ packages:
       warning: 4.0.3
     dev: false
 
+  /ant-design-vue/3.2.2_vue@3.2.33:
+    resolution: {integrity: sha512-PD9fgioIo+0PtSq8E6BePQ0eho83MsAlHURMePo6IFOPpdv0EE7AFeotOK/rUp1FOyb1fZc5tuJGL3MsJmfn1g==}
+    peerDependencies:
+      vue: '>=3.2.0'
+    dependencies:
+      '@ant-design/colors': 6.0.0
+      '@ant-design/icons-vue': 6.1.0_vue@3.2.33
+      '@babel/runtime': 7.17.9
+      '@ctrl/tinycolor': 3.4.1
+      '@simonwep/pickr': 1.8.2
+      array-tree-filter: 2.1.0
+      async-validator: 4.1.1
+      dayjs: 1.11.1
+      dom-align: 1.12.3
+      dom-scroll-into-view: 2.0.1
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      resize-observer-polyfill: 1.5.1
+      scroll-into-view-if-needed: 2.2.29
+      shallow-equal: 1.2.1
+      vue: 3.2.33
+      vue-types: 3.0.2_vue@3.2.33
+      warning: 4.0.3
+    dev: false
+
   /any-promise/1.3.0:
     resolution: {integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=}
     dev: true
@@ -2679,6 +2712,10 @@ packages:
 
   /async-validator/3.5.2:
     resolution: {integrity: sha512-8eLCg00W9pIRZSB781UUX/H6Oskmm8xloZfr09lz5bikRpBVDlJ3hRVuxxP1SxcwsEYfJ4IU8Q19Y8/893r3rQ==}
+    dev: false
+
+  /async-validator/4.1.1:
+    resolution: {integrity: sha512-p4DO/JXwjs8klJyJL8Q2oM4ks5fUTze/h5k10oPPKMiLe1fj3G1QMzPHNmN1Py4ycOk7WlO2DcGXv1qiESJCZA==}
     dev: false
 
   /atob/2.1.2:
@@ -3652,6 +3689,10 @@ packages:
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
+
+  /dayjs/1.11.1:
+    resolution: {integrity: sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

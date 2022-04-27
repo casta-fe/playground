@@ -115,6 +115,7 @@
 </script>
 
 <style lang="less">
+  @import "../index.less";
   .ta-button-group {
     margin-bottom: @gap16;
     position: relative;
