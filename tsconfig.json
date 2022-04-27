@@ -22,8 +22,8 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "paths": {
-      "/@/*": ["src/*"],
-      "/#/*": ["types/*"]
+      "/@/*": ["packages/*"],
+      "/#/*": ["typings/*"]
     }
   },
   "include": [

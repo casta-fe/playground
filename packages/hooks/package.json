@@ -1,0 +1,10 @@
+{
+  "name": "@casta-fe-playground/hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "",
+  "license": "ISC"
+}
