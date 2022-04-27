@@ -9,6 +9,9 @@
   <TimeLineList></TimeLineList>
   <BasicTable/>
   <UseForm/>
+  <Time></Time>
+  <Input />
+  <TableTags/>
 </template>
 
 <script  lang="ts">
@@ -17,6 +20,10 @@ import UseForm from "./components/Form/UseForm.vue"
 import Button from "./components/Button.vue";
 import InputNumberRange from "./components/InputNumberRange.vue";
 import TimeLineList from './components/TimeLineList.vue'
+import Time from './components/Time/index.vue'
+import Input from './components/Input/index.vue'
+import TableTags from './components/tableTags/index.vue'
+
 import { defineComponent } from 'vue';
 export default defineComponent({
   name:"App",
@@ -25,7 +32,10 @@ export default defineComponent({
     InputNumberRange,
     TimeLineList,
     BasicTable,
-    UseForm
+    UseForm,
+    Time,
+    Input,
+    TableTags
   },
   setup(){
     return {}

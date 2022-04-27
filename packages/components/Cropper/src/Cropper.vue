@@ -174,6 +174,8 @@
   });
 </script>
 <style lang="less">
+  @import "../../../theme-chalk/src/var";
+
   @prefix-cls: ~"@{namespace}-cropper-image";
 
   .@{prefix-cls} {

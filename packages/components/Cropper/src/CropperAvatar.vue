@@ -113,6 +113,7 @@
 </script>
 
 <style lang="less" scoped>
+  @import "../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-cropper-avatar";
 
   .@{prefix-cls} {

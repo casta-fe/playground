@@ -28,7 +28,7 @@
   import { Dropdown, Menu, MenuItem, RangePicker } from "ant-design-vue";
   import moment from "moment";
   import { defineComponent, reactive } from "vue";
-  import { Button } from "/@/components/Button";
+  import { Button } from "ant-design-vue";
   export default defineComponent({
     components: {
       RangePicker,

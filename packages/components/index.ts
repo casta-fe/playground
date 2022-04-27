@@ -28,9 +28,14 @@ export * from "./Skeleton";
 export * from "./StrengthMeter";
 export * from "./Table";
 export * from "./Transition"; // 导出的是函数
-<<<<<<< HEAD
 export * from "./TimeLineList"; // 导出的是函数
 
-=======
 export * from "./Upload";
->>>>>>> 1319487e6d0bb615af4ebe07eb756c8bee3e23e6
+export * from './Time'
+export * from './Input'
+export * from './TableTags'
+export * from './Tree'
+export * from './FileViews'
+export * from './CardList'
+
+

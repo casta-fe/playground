@@ -44,6 +44,8 @@
 </script>
 
 <style lang="less">
+  @import "../../../../theme-chalk/src/var";
+
   @prefix-cls: ~"@{namespace}-basic-drawer-header";
   @footer-height: 60px;
   .@{prefix-cls} {

@@ -89,7 +89,7 @@ function downLoadCallBack(res, name, suffix) {
     }
   };
 }
-export default function (data, fileName?) {
+const download=(data, fileName?)=> {
   if (isArray(data)) {
     if (data.length == 0) {
       createMessage.warning("请选择要下载的文件");
@@ -117,3 +117,5 @@ export default function (data, fileName?) {
     // });
   }
 }
+
+export default download

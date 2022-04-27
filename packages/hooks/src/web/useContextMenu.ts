@@ -1,7 +1,10 @@
 // import { onUnmounted, getCurrentInstance } from "vue";
 // import { createContextMenu, destroyContextMenu } from "@casta-fe-playground/components/ContextMenu";
 // import type { ContextMenuItem } from "@casta-fe-playground/components/ContextMenu";
-// export type { ContextMenuItem };
+type ContextMenuItem={
+
+}
+export type { ContextMenuItem };
 // export function useContextMenu(authRemove = true) {
 //   if (getCurrentInstance() && authRemove) {
 //     onUnmounted(() => {
@@ -10,4 +13,6 @@
 //   }
 //   return [createContextMenu, destroyContextMenu];
 // }
-export function useContextMenu(){}
+export function useContextMenu(){
+    return []
+}

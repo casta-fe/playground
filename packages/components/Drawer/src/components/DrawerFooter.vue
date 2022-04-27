@@ -63,6 +63,8 @@
 </script>
 
 <style lang="less">
+  @import "../../../../theme-chalk/src/var";
+
   @prefix-cls: ~"@{namespace}-basic-drawer-footer";
   @footer-height: 60px;
   .@{prefix-cls} {
