@@ -1,8 +1,8 @@
 # playground
 `casta-fe-playground` 是基于 Vue 3 + Typescript + Vite 技术开发的前端 Vue 组件库。该项目采用`pnpm+monorepo`进行包管理,使用`gulp`控制打包流程,`rollup`进行打包。
 
-# 进度计划：
-https://www.notion.so/i7eo/66aee77787804dcbb005026ebcab05bb
+# 进度：
+https://github.com/casta-fe/playground/projects/1
 
 # 组件处理原则
 1. 删掉usedesign 写死ta-
