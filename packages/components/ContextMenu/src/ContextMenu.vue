@@ -147,7 +147,7 @@
 
   @large-height: 36px !important;
 
-  .item-style() {
+  .item-style {
     li {
       display: inline-block;
       width: 100%;

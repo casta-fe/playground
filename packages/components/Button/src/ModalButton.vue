@@ -18,7 +18,7 @@
   import { Modal } from "ant-design-vue";
   import { computed, defineComponent, h, unref } from "vue";
   import Button from "./BasicButton.vue";
-  import Icon from "/@/components/Icon/src/Icon.vue";
+  import Icon from "@casta-fe-playground/components/Icon/src/Icon.vue";
   import { useAttrs } from "@casta-fe-playground/hooks";
 
 
@@ -84,6 +84,8 @@
 </script>
 
 <style lang="less">
+@import "../../../theme-chalk/src/ant";
+  @import "../../../theme-chalk/src/var";
   .modal-button-confirm.ant-modal-confirm {
     .ant-modal-confirm-btns {
       display: flex;
