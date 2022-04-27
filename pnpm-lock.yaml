@@ -9,6 +9,7 @@ importers:
       '@antv/g6': 4.5.0
       '@casta-fe-playground/components': workspace:*
       '@casta-fe-playground/eslint-config': workspace:*
+      '@casta-fe-playground/hooks': workspace:^1.0.0
       '@casta-fe-playground/stylelint-config': workspace:*
       '@casta-fe-playground/theme-chalk': workspace:*
       '@casta-fe-playground/utils': workspace:*
@@ -105,6 +106,7 @@ importers:
       '@antv/g6': 4.5.0
       '@casta-fe-playground/components': link:packages/components
       '@casta-fe-playground/eslint-config': link:internal/eslint-config
+      '@casta-fe-playground/hooks': link:packages/hooks
       '@casta-fe-playground/stylelint-config': link:internal/stylelint-config
       '@casta-fe-playground/theme-chalk': link:packages/theme-chalk
       '@casta-fe-playground/utils': link:packages/utils
@@ -2019,7 +2021,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.5
+      vite: 2.9.5_less@4.1.2+sass@1.51.0
       vue: 3.2.33
     dev: true
 
