@@ -86,7 +86,7 @@
     TableActionType
   } from "./types/table";
   import { InnerHandlers } from "./types/table";
-  import { BasicForm, useForm } from "@casta-fe-playground/components/Form/index";
+  import { BasicForm, useForm } from "@casta-fe-playground/components/Form";
   // import emitter from "@casta-fe-playground/hooks/web/useEmiiter";
   // import { usePermission } from "@casta-fe-playground/hooks/web/usePermission";
   import { isFunction, warn, mitt } from "@casta-fe-playground/utils";

@@ -1,6 +1,6 @@
 <script lang="tsx">
   import type { DescriptionProps, DescInstance, DescItem } from "./typing";
-  import type { DescriptionsProps } from "ant-design-vue/es/descriptions/index";
+  import type { DescriptionsProps } from "ant-design-vue/es/descriptions";
   import type { CSSProperties } from "vue";
   import type { CollapseContainerOptions } from "@casta-fe-playground/components/Container";
   import { defineComponent, computed, ref, unref } from "vue";

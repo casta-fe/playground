@@ -28,9 +28,9 @@
 </template>
 <script lang="ts">
   import { defineComponent, ref } from "vue";
+  import { getBasicColumns, getBasicData } from "./tableData";
   import { BasicTable, ColumnChangeParam } from "@casta-fe-playground/components/Table";
   import {Button} from "@casta-fe-playground/components/Button"
-  import { getBasicColumns, getBasicData } from "./tableData";
 
   export default defineComponent({
     components: { BasicTable, Button },

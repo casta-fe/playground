@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts">
-  import Time from '@casta-fe-playground/components/Time'
-  import { defineComponent,reactive } from "vue";
+  import { Time } from "@casta-fe-playground/components/Time";
+  import { defineComponent, reactive } from "vue";
   export default defineComponent({
     name: "ButtonTest",
     components: {
@@ -15,8 +15,8 @@
     },
     setup() {
       const state = reactive({
-        value:'1994//04/27'
-      })
+        value: "1994//04/27"
+      });
       return {
         state
       };

@@ -5,5 +5,5 @@
  */
 import FileView from "./src/index.vue";
 import { withInstall } from "@casta-fe-playground/utils";
-const TaFileView=withInstall(FileView)
+const TaFileView = withInstall(FileView)
 export default TaFileView;

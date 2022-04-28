@@ -3,7 +3,7 @@ import type { RowProps } from "ant-design-vue/lib/grid/Row";
 import type { CSSProperties, PropType } from "vue";
 import type { ColEx } from "./types";
 import type { FieldMapToTime, FormSchema } from "./types/form";
-import type { TableActionType } from "@casta-fe-plaground/components/Table";
+import type { TableActionType } from "@casta-fe-playground/components/Table";
 import { propTypes } from "@casta-fe-playground/utils";
 
 export const basicProps = {

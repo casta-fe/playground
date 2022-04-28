@@ -1,6 +1,6 @@
 import type Cropper from "cropperjs";
 
-export interface CropendResult {
+export interface CropperCropendResult {
   imgBase64: string;
   imgInfo: Cropper.Data;
 }

@@ -4,7 +4,7 @@
  * @Date: 2021-11-05 11:01:49
  */
 
-export interface ButtonItem {
+export interface ButtonGroupItem {
   value: string | number;
   label: string;
   url?: string;

@@ -5,7 +5,7 @@
     </span>
     <template #overlay>
       <a-menu :selectedKeys="selectedKeys">
-        <template v-for="item in dropMenuList" :key="`${item.event}`">
+        <template v-for="item in DropdownMenuList" :key="`${item.event}`">
           <a-menu-item
             v-bind="getAttr(item.event)"
             @click.stop.prevent="handleClickMenu(item)"
@@ -50,13 +50,13 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, PropType } from "vue";
-  import type { DropMenu } from "./typing";
-  import { Dropdown, Menu, Popconfirm } from "ant-design-vue";
-  import { Icon } from "@casta-fe-playground/components/Icon";
-  import { omit } from "lodash-es";
-  import { isFunction } from "@casta-fe-playground/utils";
   import { ModalButton } from "@casta-fe-playground/components/Button";
+  import { Icon } from "@casta-fe-playground/components/Icon";
+  import { isFunction } from "@casta-fe-playground/utils";
+  import { Dropdown, Menu, Popconfirm } from "ant-design-vue";
+  import { omit } from "lodash-es";
+  import { computed, PropType } from "vue";
+  import type { DropdownMenu } from "./typing";
 
   const ADropdown = Dropdown;
   const AMenu = Menu;
@@ -77,7 +77,7 @@
         return ["contextmenu"];
       }
     },
-    dropMenuList: {
+    DropdownMenuList: {
       type: Array as PropType<Recordable[]>,
       default: () => []
     },
@@ -89,9 +89,9 @@
 
   const emit = defineEmits(["menuEvent", "menuItemPopConfirmVisible"]);
 
-  function handleClickMenu(item: DropMenu) {
+  function handleClickMenu(item: DropdownMenu) {
     const { event } = item;
-    const menu = props.dropMenuList.find((item) => `${item.event}` === `${event}`);
+    const menu = props.DropdownMenuList.find((item) => `${item.event}` === `${event}`);
     emit("menuEvent", menu);
     item.onClick?.();
   }

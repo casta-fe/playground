@@ -25,11 +25,11 @@
       class="mr-4"
       type="primary"
       preIcon="ant-design:export-outlined"
-      @click="expOpenModal"
+      @click="exportOpenModal"
     >
       导出
     </Button>
-    <ExpExcelModal @register="expModalRegister" @success="exportHandler" />
+    <!-- <ExpExcelModal @register="expModalRegister" @success="exportHandler" /> -->
     <Button
       v-if="props.visible?.isRefreshVisible"
       class="mr-4 refresh-btn"
@@ -43,8 +43,8 @@
   import { computed, inject, PropType, reactive } from "vue";
   import type { TableActionType } from "../types/table";
   import { Button } from "@casta-fe-playground/components/Button";
-  import { ExpExcelModal, ExportModalResult, jsonToSheetXlsx } from "@casta-fe-playground/components/Excel";
-  import { useModal } from "@casta-fe-playground/components/Modal";
+  // import { ExpExcelModal, ExportModalResult, jsonToSheetXlsx } from "@casta-fe-playground/components/Excel";
+  // import { useModal } from "@casta-fe-playground/components/Modal";
   import { useMessage } from "@casta-fe-playground/hooks";
   import { componentSetting } from "@casta-fe-playground/settings";
   import { Emitter } from "@casta-fe-playground/utils";
@@ -95,23 +95,26 @@
     // });
   };
 
-  const tableData = computed(() => {
-    return props.tableAction?.getRawDataSource
-      ? props.tableAction?.getRawDataSource()[listField]
-      : [];
-  });
-
-  const exportHandler = ({ filename, bookType }: ExportModalResult) => {
-    // 默认Object.keys(data[0])作为header
-    jsonToSheetXlsx({
-      data: tableData.value,
-      filename,
-      write2excelOpts: {
-        bookType
-      }
-    });
+  const exportOpenModal = () => {
+    props.handlers?.exportHandle();
   };
-  const [expModalRegister, { openModal: expOpenModal }] = useModal();
+
+  // const tableData = computed(() => {
+  //   return props.tableAction?.getRawDataSource
+  //     ? props.tableAction?.getRawDataSource()[listField]
+  //     : [];
+  // });
+  // const exportHandler = ({ filename, bookType }: ExportModalResult) => {
+  //   // 默认Object.keys(data[0])作为header
+  //   jsonToSheetXlsx({
+  //     data: tableData.value,
+  //     filename,
+  //     write2excelOpts: {
+  //       bookType
+  //     }
+  //   });
+  // };
+  // const [expModalRegister, { openModal: expOpenModal }] = useModal();
 
   const refreshHandler = () => {
     props.tableAction?.reload({

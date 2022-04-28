@@ -59,9 +59,9 @@
 </template>
 <script lang="ts">
   import { defineComponent } from "vue";
+  import { useMessage } from "@casta-fe-playground/hooks";
   import { BasicForm, FormSchema, useForm } from "@casta-fe-playground/components/Form";
   import { CollapseContainer } from "@casta-fe-playground/components/Container";
-  import { useMessage } from "@casta-fe-playground/hooks";
   import {Button} from "@casta-fe-playground/components/Button"
 
   const schemas: FormSchema[] = [
