@@ -41,16 +41,16 @@
         <template v-if="fileType == 'mpeg'">
           <iframe :src="filePath" frameborder="0" id="fileIframe"></iframe>
         </template>
+        <template v-if="fileType == 'pic'">
+          <img :src="filePath" alt="" />
+        </template>
         <template v-if="fileType == 'text'">
           <div class="text-page">
             <iframe :src="filePath" frameborder="0" id="fileIframe"></iframe>
           </div>
         </template>
-        <template v-if="fileType == 'pic'">
-          <img :src="filePath" alt="" />
-        </template>
         <template v-if="fileType == ''">
-          <div class="empty">暂不支持该格式预览</div>
+          <div class="empty">暂不支持该格式预览 {{ fileType }}</div>
         </template>
       </div>
     </Spin>
@@ -62,25 +62,28 @@
   import { Modal, Spin } from "ant-design-vue";
   import { computed, defineComponent, nextTick, reactive, toRefs, watch } from "vue";
   import props from "./props";
-  // import { previewFile } from "/@/api/file";
-  // import download from "@casta-fe-playground/utils";
-  import download from '@casta-fe-playground/utils/src/file/TaDownload'
+  import { Button } from "@casta-fe-playground/components/Button";
+  import download from "@casta-fe-playground/utils/src/file/TaDownload";
+  import { useMessage } from "@casta-fe-playground/hooks/index";
   export default defineComponent({
     components: {
       Modal,
       Spin,
       LeftOutlined,
-      RightOutlined
+      RightOutlined,
+      Button
     },
     props,
     emits: ["update:show"],
     setup(props, { emit }) {
+      const { createMessage } = useMessage();
       const state = reactive({
         index: props.index,
         filePath: "",
         showModal: props.show,
         pageLoading: false
       });
+      const ignoreList = ["zip", "tar", "7z"];
       let loadFileTypes = {
         office: ["doc", "docx", "xls", "xlsx", "ppt", "pptx", "pdf"],
         audio: ["mp3", "mp3", "wav", "rm", "rpm"],
@@ -110,7 +113,8 @@
         }
         state.filePath = "";
         state.pageLoading = true;
-        props.fileApi(id)
+        props
+          .fileApi(id)
           .then((res) => {
             state.pageLoading = false;
             state.filePath = res.data;
@@ -159,6 +163,10 @@
       watch(
         () => props.show,
         (newData) => {
+          // if (ignoreList.includes(currentFile.value.suffix)) {
+          //   createMessage.warning("暂不支持该文件预览");
+          //   return;
+          // }
           state.showModal = newData;
           state.index = props.index;
           if (newData) {
@@ -193,7 +201,6 @@
 </script>
 
 <style lang="less">
-  @import "../../../theme-chalk/src/var";
   .file-view-modal {
     .ant-modal {
       top: 0;
@@ -243,7 +250,7 @@
 
       .ant-modal-header {
         border-radius: 0;
-        background: rgba(@primiary-color, 1);
+        // background: rgba(@primaryColor, 1);
         border-bottom: none;
 
         .ant-modal-title {
@@ -276,6 +283,7 @@
         flex: 1;
         // padding: 0 10%;
         max-height: 100%;
+        overflow: hidden;
 
         .ant-spin {
           height: 100%;
@@ -299,7 +307,7 @@
 
         .file-view-content {
           // background: #fff;
-          height: calc(100vh - 40px);
+          height: calc(100vh - 50px);
           box-sizing: border-box;
           display: flex;
           align-items: center;
@@ -315,12 +323,11 @@
             width: 640px;
             height: 368px;
           }
-        }
-
-        .text-page {
-          background: #fff;
-          height: 100%;
-          width: 800px;
+          .text-page {
+            background: #fff;
+            height: 100%;
+            width: 800px;
+          }
         }
 
         iframe {

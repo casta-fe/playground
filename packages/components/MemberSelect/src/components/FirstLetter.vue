@@ -1,9 +1,4 @@
 <!--
- * @Author: i7eo
- * @Descripttion: Think & Action
- * @Date: 2021-12-14 11:19:50
--->
-<!--
  * @Author: huyb
  * @Descripttion: 名字第一个字，根据UI分析是 依据index来设置颜色，后面根据情况来修改
  * @Date: 2021-11-09 20:09:57
