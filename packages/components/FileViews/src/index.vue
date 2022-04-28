@@ -17,7 +17,7 @@
         <Button type="text" @click="downloadFile">下载</Button>
       </div>
       <span class="file-view-num">{{ index + 1 }}/{{ list.length }}</span> -->
-      <span class="file-view-title">{{ currentFile.name + "." + currentFile.suffix }}</span>
+      <span class="file-view-title">{{filePath}}{{ currentFile.name + "." + currentFile.suffix }}</span>
     </template>
     <template v-if="list.length > 1">
       <div class="file-view-modal-prev" @click="goPrev">
@@ -75,6 +75,7 @@
     props,
     emits: ["update:show"],
     setup(props, { emit }) {
+      console.log(props)
       const state = reactive({
         index: props.index,
         filePath: "",
@@ -110,18 +111,22 @@
         }
         state.filePath = "";
         state.pageLoading = true;
-        props.fileApi(id)
-          .then((res) => {
-            state.pageLoading = false;
-            state.filePath = res.data;
-            loadIframeHandle();
-          })
-          .catch((err) => {
-            console.log(err);
-            state.pageLoading = false;
-            setTimeout(afterCloseHandle, 1000);
-            // state.pageLoading = false;
-          });
+
+        state.pageLoading = false;
+        state.filePath = 'http://file.office.com/copy/other/logo192-202204281651140254649.png';
+        loadIframeHandle();
+        // props.fileApi(id)
+        //   .then((res) => {
+        //     state.pageLoading = false;
+        //     state.filePath = res.data;
+        //     loadIframeHandle();
+        //   })
+        //   .catch((err) => {
+        //     console.log(err);
+        //     state.pageLoading = false;
+        //     setTimeout(afterCloseHandle, 1000);
+        //     // state.pageLoading = false;
+        //   });
       };
       const loadIframeHandle = () => {
         let iframeEle = window.document.getElementById("fileIframe");
@@ -186,7 +191,7 @@
         downloadFile,
         goPrev,
         goNext,
-        afterCloseHandle
+        afterCloseHandle,
       };
     }
   });

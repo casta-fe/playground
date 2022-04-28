@@ -1,7 +1,7 @@
 <template>
   <section class="test">
     <h2>Input组件测试</h2>
-    <TaInput :value='state.value'/>
+    <TaInput v-model:value='state.value'/>
     <span>{{state.value}}</span>
   </section>
 </template>

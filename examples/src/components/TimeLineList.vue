@@ -6,7 +6,10 @@
     </div>
     <h2>TimeLineList 自定义渲染内容使用</h2>
     <div class="components">
-      <TimeLine :list="state.list" :useLoadingMore="false" :renderListItem="renderListItem">
+      <TimeLine :list="state.list" :useLoadingMore="true" :renderListItem="renderListItem">
+        <template #loadMore>
+          <div>dkdkdkdkdkdk</div>
+        </template>
       </TimeLine>
     </div>
   </section>

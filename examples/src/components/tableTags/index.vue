@@ -2,7 +2,7 @@
   <section class="test">
     <h2>TaTableTags</h2>
     <TaTableTags :tags="state.tags" />
-    <BasicTree :BasicTree-data="state.treeData"></BasicTree>
+    <BasicTree :tree-data="state.treeData"></BasicTree>
   </section>
 </template>
 
@@ -22,14 +22,12 @@
         {
           title: "parent 1",
           key: "0-0",
-          isLeaf: true,
-          child: [
+          children: [
             {
               title: "张晨成",
               key: "0-0-0",
               disabled: true,
-              isLeaf: true,
-              child: [
+              children: [
                 { title: "leaf", key: "0-0-0-0", disableCheckbox: true },
                 { title: "leaf", key: "0-0-0-1" }
               ]
@@ -37,7 +35,7 @@
             {
               title: "parent 1-1",
               key: "0-0-1",
-              child: [{ key: "0-0-1-0", title: "zcvc" }]
+              children: [{ key: "0-0-1-0", title: "zcvc" }]
             }
           ]
         }
