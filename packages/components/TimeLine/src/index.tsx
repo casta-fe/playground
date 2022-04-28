@@ -23,7 +23,6 @@ export default defineComponent({
         return <ListItemDefault itemData={item}></ListItemDefault>
       }
     }
-
     return () => (
       <List
         class="ta-timeline-list"
@@ -31,11 +30,18 @@ export default defineComponent({
         data-source={list}
         renderItem={renderItem}
       > 
-        {useLoadingMore&&<div  class="ta-timeline-list-loading-more">
-          <Button postIcon="ant-design:cloud-download-outlined" onClick={handleLoadingMore}>
-            加载更多
-          </Button>
-        </div>}
+        {
+          useLoadingMore
+          ?
+            slots.loadMore
+              ?slots.loadMore()
+              :<div  class="ta-timeline-list-loading-more">
+                <Button postIcon="ant-design:cloud-download-outlined" onClick={handleLoadingMore}>
+                  加载更多
+                </Button>
+              </div>
+          :''
+        }
       </List>
 
     )

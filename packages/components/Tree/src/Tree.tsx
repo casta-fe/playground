@@ -1,6 +1,4 @@
-<script lang="tsx">
   import type { ReplaceFields, Keys, CheckKeys, TreeActionType, TreeItem } from "./typing";
-
   import {
     defineComponent,
     reactive,
@@ -17,20 +15,15 @@
   import { TreeIcon } from "./TreeIcon";
   import TreeHeader from "./TreeHeader.vue";
   import { ScrollContainer } from "@casta-fe-playground/components/Container";
-
   import { omit, get, difference } from "lodash-es";
   import { isArray, isBoolean, isEmpty, isFunction } from "@casta-fe-playground/utils";
   import { extendSlots, getSlot } from "@casta-fe-playground/utils";
   import { filter, treeToList } from "@casta-fe-playground/utils";
-
   import { useTree } from "./useTree";
   import { useContextMenu } from "@casta-fe-playground/hooks";
-
   import { basicProps } from "./props";
   import { CreateContextOptions } from "/@/components/ContextMenu";
-
   import { CheckEvent } from "./typing";
-
   interface State {
     expandedKeys: Keys;
     selectedKeys: Keys;
@@ -479,53 +472,3 @@
       };
     }
   });
-</script>
-<style lang="less">
-  @import "../../../theme-chalk/src/var";
-
-  @prefix-cls: ~"@{namespace}-basic-tree";
-
-  .@{prefix-cls} {
-    background-color: @component-background;
-
-    .ant-tree-node-content-wrapper {
-      position: relative;
-
-      .ant-tree-title {
-        position: absolute;
-        left: 0;
-        width: 100%;
-      }
-    }
-
-    &-title {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding-right: 10px;
-
-      &:hover {
-        .@{prefix-cls}__action {
-          visibility: visible;
-        }
-      }
-    }
-
-    &__content {
-      overflow: hidden;
-    }
-
-    &__actions {
-      position: absolute;
-      top: 2px;
-      right: 3px;
-      display: flex;
-    }
-
-    &__action {
-      margin-left: 4px;
-      visibility: hidden;
-    }
-  }
-</style>

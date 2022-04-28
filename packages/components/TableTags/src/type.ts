@@ -4,8 +4,8 @@
  * @Date: 2021-11-05 11:01:49
  */
 
-export interface TagItem {
+export interface TableTagItem {
   type: String;
   text: String;
 }
-export type Tags = TagItem[];
+export type Tags = TableTagItem[];

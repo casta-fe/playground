@@ -1,5 +1,4 @@
-import TgBasicTree from "./src/Tree.vue";
 import { withInstall } from "@casta-fe-playground/utils";
-const BasicTree=withInstall(TgBasicTree);
-export default BasicTree;
+import basicTree from "./src/Tree";
+export const BasicTree = withInstall(basicTree);
 export * from "./src/typing";

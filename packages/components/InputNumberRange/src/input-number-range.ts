@@ -8,7 +8,7 @@ export type InputNumberRangeProps={
     prefixCenter?: string | number | undefined,
     precision?:InputNumberProps['precision']
   }
-export const defaultProps={
+export const inputNumberRangeProps={
   value: {
     type: Array as PropType<InputNumberRangeProps['value']>,
     default: () => []
@@ -39,4 +39,4 @@ export const defaultProps={
   }
 }
 
-export const defaultEmits=["change", "blur"]
+export const inputNumberRangeEmits=["change", "blur"]

@@ -17,10 +17,12 @@ import path from "path";
  */
 
 function compileLess() {
+  console.log('compileLess')
   return src(path.resolve(__dirname, "./src/*.less"))
     .pipe(less())
     .pipe(autoprefixer())
     .on("data", (data) => {
+      console.log(data,'dkkdkd')
       let content = data.contents.toString();
       content = content.replaceAll("./fonts", "casta-fe-playground/theme-chalk/fonts");
       data.contents = new Buffer(content);
@@ -36,10 +38,10 @@ function compileLess() {
 //   // 从src下单fonts文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的font目录
 //   return src(path.resolve(__dirname, "./src/fonts/**")).pipe(cleanCss()).pipe(dest("./dist/fonts"));
 // }
-function copyLess() {
-  // 从src下单src文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的less目录
-  return src(path.resolve(__dirname, "./src/**")).pipe(dest("./dist/less"));
-}
+// function copyLess() {
+//   // 从src下单src文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的less目录
+//   return src(path.resolve(__dirname, "./src/**")).pipe(dest("./dist/less"));
+// }
 /**
  * 把打包好的css输出到根目录的dist
  */
@@ -49,5 +51,6 @@ function copyFullStyle() {
 }
 
 // export default series(compileLess, copyFonts, copyFullStyle);
-export default series(compileLess, copyLess,copyFullStyle);
+// copyLess,
+export default series(compileLess,copyFullStyle);
 

@@ -1,15 +1,15 @@
+import type { ContextMenuItem } from "@casta-fe-playground/hooks";
+import { propTypes } from "@casta-fe-playground/utils";
+import type { TreeDataItem } from "ant-design-vue/es/tree/Tree";
 import type { PropType } from "vue";
 import type {
-  ReplaceFields,
-  ActionItem,
-  Keys,
   CheckKeys,
   ContextMenuOptions,
+  Keys,
+  ReplaceFields,
+  TreeActionItem,
   TreeItem
 } from "./typing";
-import type { ContextMenuItem } from "@casta-fe-playground/hooks";
-import type { TreeDataItem } from "ant-design-vue/es/tree/Tree";
-import { propTypes } from "@casta-fe-playground/utils";
 
 export const basicProps = {
   value: {
@@ -46,7 +46,7 @@ export const basicProps = {
   },
 
   actionList: {
-    type: Array as PropType<ActionItem[]>,
+    type: Array as PropType<TreeActionItem[]>,
     default: () => []
   },
 
@@ -95,7 +95,7 @@ export const basicProps = {
 
 export const treeNodeProps = {
   actionList: {
-    type: Array as PropType<ActionItem[]>,
+    type: Array as PropType<TreeActionItem[]>,
     default: () => []
   },
   replaceFields: {

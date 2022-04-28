@@ -30,7 +30,7 @@
   // import { cloneDeep } from "lodash-es";
   import { toRefs, watch } from "vue";
   import { defineComponent, reactive } from "vue-demi";
-  import { defaultProps,defaultEmits } from "./input-number-range";
+  import { inputNumberRangeProps,inputNumberRangeEmits } from "./input-number-range";
   import { useMessage } from "@casta-fe-playground/hooks";
   const { createMessage } = useMessage();
   export type InputNumberRangeState={
@@ -43,8 +43,8 @@
       Input,
       InputNumber
     },
-    props:defaultProps,
-    emits: defaultEmits,
+    props:inputNumberRangeProps,
+    emits: inputNumberRangeEmits,
     setup(props, { emit }) {
       const initPropsValue= props.value?props.value.slice(0):[]
     

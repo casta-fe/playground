@@ -1,7 +1,8 @@
 <template>
   <section class="test">
     <h2>Input组件测试</h2>
-    <TaInput />
+    <TaInput v-model:value='state.value'/>
+    <span>{{state.value}}</span>
   </section>
 </template>
 
@@ -15,7 +16,7 @@
     },
     setup() {
       const state = reactive({
-        value:'1994//04/27'
+        value:'ssss'
       })
       return {
         state

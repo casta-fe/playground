@@ -47,7 +47,8 @@
   import { computed, defineComponent, inject, nextTick, reactive, ref, unref } from "vue";
   import type { FilterForms, TableActionType } from "../types/table";
   import { Button } from "@casta-fe-playground/components/Button";
-  import { BasicForm, FormSchema, useForm } from "@casta-fe-playground/components/Form/index";
+  // import { BasicForm, FormSchema, useForm } from "@casta-fe-playground/components/Form";
+  import { BasicForm, FormSchema, useForm } from "../../../Form";
   import { BasicModal, useModal } from "@casta-fe-playground/components/Modal";
   import { useWindowSizeFn } from "@casta-fe-playground/hooks";
   import { Emitter } from "@casta-fe-playground/utils";
