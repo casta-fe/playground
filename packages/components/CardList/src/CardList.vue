@@ -73,105 +73,137 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-  import { computed, onMounted, ref } from "vue";
-  import {
+<script lang="ts">
+import { computed, defineComponent, onMounted, ref } from "vue";
+import { EditOutlined, EllipsisOutlined, RedoOutlined, TableOutlined } from "@ant-design/icons-vue";
+import { List, Card, Image, Typography, Tooltip, Slider, Avatar } from "ant-design-vue";
+import { Dropdown } from "@casta-fe-playground/components/Dropdown";
+import { BasicForm, useForm } from "@casta-fe-playground/components/Form";
+import { propTypes } from "@casta-fe-playground/utils";
+import { Button } from "@casta-fe-playground/components/Button";
+import { isFunction } from "@casta-fe-playground/utils";
+import { useSlider, grid } from "./data";
+const TypographyText = Typography.Text;
+
+const ListItem = List.Item;
+const CardMeta = Card.Meta;
+export default defineComponent({
+  name: "CardList",
+  emits: ["getMethod", "delete"],
+  components: {
+    TypographyText,
+    ListItem,
+    CardMeta,
+    Button,
+    BasicForm,
+    Dropdown,
+    Image,
+    Tooltip,
+    Slider,
+    Avatar,
     EditOutlined,
     EllipsisOutlined,
     RedoOutlined,
     TableOutlined
-  } from "@ant-design/icons-vue";
-  import { List, Card, Image, Typography, Tooltip, Slider, Avatar } from "ant-design-vue";
-  import  {Dropdown}  from "@casta-fe-playground/components/Dropdown";
-  import { BasicForm, useForm } from "@casta-fe-playground/components/Form";
-  import { propTypes } from "@casta-fe-playground/utils";
-  import { Button } from "@casta-fe-playground/components/Button";
-  import { isFunction } from "@casta-fe-playground/utils";
-  import { useSlider, grid } from "./data";
-  const ListItem = List.Item;
-  const CardMeta = Card.Meta;
-  const TypographyText = Typography.Text;
-  // 获取slider属性
-  const sliderProp = computed(() => useSlider(4));
-  // 组件接收参数
-  const props = defineProps({
+  },
+  props: {
     // 请求API的参数
     /* eslint-disable-next-line */
     params: propTypes.object.def({}),
     //api
     /* eslint-disable-next-line */
     api: propTypes.func
-  });
-  //暴露内部方法
-  const emit = defineEmits(["getMethod", "delete"]);
-  //数据
-  const data = ref([]);
-  // 切换每行个数
-  // cover图片自适应高度
-  //修改pageSize并重新请求数据
+  },
+  setup(props,{emit}) {
+    // 获取slider属性
+    const sliderProp = computed(() => useSlider(4));
+    //数据
+    const data = ref([]);
+    // 切换每行个数
+    // cover图片自适应高度
+    //修改pageSize并重新请求数据
 
-  const height = computed(() => {
-    return `h-${120 - grid.value * 6}`;
-  });
-  //表单
-  const [registerForm, { validate }] = useForm({
-    schemas: [{ field: "type", component: "Input", label: "类型" }],
-    labelWidth: 80,
-    baseColProps: { span: 6 },
-    actionColOptions: { span: 24 },
-    autoSubmitOnEnter: true,
-    submitFunc: handleSubmit
-  });
-  //表单提交
-  async function handleSubmit() {
-    const data = await validate();
-    await fetch(data);
-  }
-  function sliderChange(n) {
-    pageSize.value = n * 4;
-    fetch();
-  }
+    const height = computed(() => {
+      return `h-${120 - grid.value * 6}`;
+    });
 
-  // 自动请求并暴露内部方法
-  onMounted(() => {
-    fetch();
-    emit("getMethod", fetch);
-  });
+     //表单提交
+    const  handleSubmit=async ()=> {
+      const data = await validate();
+      await fetch(data);
+    }
+    //表单
+    const [registerForm, { validate }] = useForm({
+      schemas: [{ field: "type", component: "Input", label: "类型" }],
+      labelWidth: 80,
+      baseColProps: { span: 6 },
+      actionColOptions: { span: 24 },
+      autoSubmitOnEnter: true,
+      submitFunc: handleSubmit
+    });
+   
+    const sliderChange=(n)=> {
+      pageSize.value = n * 4;
+      fetch();
+    }
 
-  async function fetch(p = {}) {
-    const { api, params } = props;
-    if (api && isFunction(api)) {
-      const res = await api({ ...params, page: page.value, pageSize: pageSize.value, ...p });
-      data.value = res.items;
-      total.value = res.total;
+    // 自动请求并暴露内部方法
+    onMounted(() => {
+      fetch();
+      emit("getMethod", fetch);
+    });
+
+    async function fetch(p = {}) {
+      const { api, params } = props;
+      if (api && isFunction(api)) {
+        const res = await api({ ...params, page: page.value, pageSize: pageSize.value, ...p });
+        data.value = res.items;
+        total.value = res.total;
+      }
+    }
+    //分页相关
+    const page = ref(1);
+    const pageSize = ref(36);
+    const total = ref(0);
+    const pageSizeChange=(_current, size)=> {
+      pageSize.value = size;
+      fetch();
+    }
+   
+
+    const pageChange=(p, pz)=> {
+      page.value = p;
+      pageSize.value = pz;
+      fetch();
+    }
+   
+
+    const handleDelete=(id)=> {
+      emit("delete", id);
+    }
+
+    const paginationProp = ref({
+      showSizeChanger: false,
+      showQuickJumper: true,
+      pageSize,
+      current: page,
+      total,
+      showTotal: (total) => `总 ${total} 条`,
+      onChange: pageChange,
+      onShowSizeChange: pageSizeChange
+    });
+    return {
+      registerForm,
+      handleDelete,
+      pageSizeChange,
+      paginationProp,
+      pageChange,
+      sliderProp,
+      height,
+      fetch,
+      sliderChange,
+      grid
     }
   }
-  //分页相关
-  const page = ref(1);
-  const pageSize = ref(36);
-  const total = ref(0);
-  const paginationProp = ref({
-    showSizeChanger: false,
-    showQuickJumper: true,
-    pageSize,
-    current: page,
-    total,
-    showTotal: (total) => `总 ${total} 条`,
-    onChange: pageChange,
-    onShowSizeChange: pageSizeChange
-  });
-
-  function pageChange(p, pz) {
-    page.value = p;
-    pageSize.value = pz;
-    fetch();
-  }
-  function pageSizeChange(_current, size) {
-    pageSize.value = size;
-    fetch();
-  }
-
-  async function handleDelete(id) {
-    emit("delete", id);
-  }
+});
 </script>

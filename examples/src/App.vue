@@ -12,6 +12,7 @@
   <Time></Time>
   <Input />
   <TableTags/>
+  <CardList/>
 </template>
 
 <script  lang="ts">
@@ -23,6 +24,7 @@ import TimeLineList from './components/TimeLineList.vue'
 import Time from './components/Time/index.vue'
 import Input from './components/Input/index.vue'
 import TableTags from './components/tableTags/index.vue'
+import CardList from './components/CardList/index.vue'
 
 import { defineComponent } from 'vue';
 export default defineComponent({
@@ -35,7 +37,8 @@ export default defineComponent({
     UseForm,
     Time,
     Input,
-    TableTags
+    TableTags,
+    CardList
   },
   setup(){
     return {}
