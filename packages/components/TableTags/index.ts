@@ -1,10 +1,4 @@
-/*
- * @Author: huyb
- * @Descripttion: Think & Action
- * @Date: 2021-11-05 10:52:59
- */
-import TaTableTags from "./src/index.vue";
 import { withInstall } from "@casta-fe-playground/utils";
-const TableTags =withInstall(TaTableTags)
-export default TableTags;
-export * from './src/type'
+import taTableTags from "./src/index.vue";
+export const TaTableTags = withInstall(taTableTags);
+export * from "./src/type";

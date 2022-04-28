@@ -42,9 +42,9 @@ export interface DescInstance {
   setDescProps(descProps: Partial<DescriptionProps>): void;
 }
 
-export type Register = (descInstance: DescInstance) => void;
+export type DescRegister = (descInstance: DescInstance) => void;
 
 /**
  * @description:
  */
-export type UseDescReturnType = [Register, DescInstance];
+export type UseDescReturnType = [DescRegister, DescInstance];

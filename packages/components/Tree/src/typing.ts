@@ -1,6 +1,6 @@
-import type { TreeDataItem, CheckEvent as CheckEventOrigin } from "ant-design-vue/es/tree/Tree";
-import {ContextMenuItem} from "@casta-fe-playground/hooks";
-export interface ActionItem {
+import { ContextMenuItem } from "@casta-fe-playground/hooks";
+import type { CheckEvent as CheckEventOrigin, TreeDataItem } from "ant-design-vue/es/tree/Tree";
+export interface TreeActionItem {
   render: (record: Recordable) => any;
   show?: boolean | ((record: Recordable) => boolean);
 }

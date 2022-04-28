@@ -47,7 +47,7 @@
   import { useTableContext } from "../hooks/useTableContext";
   import { ModalButton, PopConfirmButton } from "@casta-fe-playground/components/Button";
   import { Dropdown } from "@casta-fe-playground/components/Dropdown";
-  import Icon from "@casta-fe-playground/components/Icon/index";
+  import Icon from "@casta-fe-playground/components/Icon";
   import { ActionItem, TableActionType } from "@casta-fe-playground/components/Table";
   // import { usePermission } from "@casta-fe-playground/hooks/web/usePermission";
   import { isBoolean, isFunction, propTypes, isString } from "@casta-fe-playground/utils";

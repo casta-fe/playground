@@ -111,12 +111,12 @@
   </BasicModal>
 </template>
 <script lang="ts">
-  import type { CropendResult, Cropper } from "./typing";
-  import { defineComponent, ref } from "vue";
-  import CropperImage from "./Cropper.vue";
-  import { Space, Upload, Avatar, Tooltip } from "ant-design-vue";
   import { BasicModal, useModalInner } from "@casta-fe-playground/components/Modal";
   import { dataURLtoBlob, isFunction } from "@casta-fe-playground/utils";
+  import { Avatar, Space, Tooltip, Upload } from "ant-design-vue";
+  import { defineComponent, ref } from "vue";
+  import CropperImage from "./Cropper.vue";
+  import type { Cropper, CropperCropendResult } from "./typing";
 
   type apiFunParams = { file: Blob; name: string; filename: string };
 
@@ -156,7 +156,7 @@
         return false;
       }
 
-      function handleCropend({ imgBase64 }: CropendResult) {
+      function handleCropend({ imgBase64 }: CropperCropendResult) {
         previewSource.value = imgBase64;
       }
 

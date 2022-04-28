@@ -1,4 +1,4 @@
-export interface DropMenu {
+export interface DropdownMenu {
   onClick?: Fn;
   to?: string;
   icon?: string;

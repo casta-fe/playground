@@ -2,10 +2,10 @@ import { defineComponent } from "vue";
 import { ListItem } from "ant-design-vue";
 import TagLabel from '../Tag/index'
 import './index.less'
-import { ListItemDefaultProps } from "./indexProps";
+import { ListItemProps } from "./indexProps";
 export default defineComponent({
     name:'TimeLineItemDefault',
-    props:ListItemDefaultProps,
+    props:ListItemProps,
     components:{
         ListItem,
         TagLabel

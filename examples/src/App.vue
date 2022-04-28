@@ -15,7 +15,7 @@
   <CardList/>
 </template>
 
-<script  lang="ts">
+<script lang="ts">
 import BasicTable from "./components/Table/Basic.vue"
 import UseForm from "./components/Form/UseForm.vue"
 import Button from "./components/Button.vue";
@@ -30,8 +30,8 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name:"App",
   components:{
-    Button,
     InputNumberRange,
+    Button,
     TimeLineList,
     BasicTable,
     UseForm,

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue"
-import InputNumberRange,{InputNumberRangeProps} from "@casta-fe-playground/components/InputNumberRange"
+import {InputNumberRange,InputNumberRangeProps} from "@casta-fe-playground/components"
 export default defineComponent({
   name: "InputNumberRangeTest",
   components: {

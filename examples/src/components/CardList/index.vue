@@ -1,17 +1,17 @@
 <template>
   <section class="test">
     <h2>CardList组件测试</h2>
-    <CardList />
+    <!-- <CardList /> -->
   </section>
 </template>
 
 <script lang="ts">
-  import {CardList} from '@casta-fe-playground/components'
+  // import {CardList} from '@casta-fe-playground/components'
   import { defineComponent,reactive } from "vue";
   export default defineComponent({
     name: "ButtonTest",
     components: {
-      CardList,
+      // CardList,
     },
     setup() {
        const treeData = [

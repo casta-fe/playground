@@ -1,4 +1,4 @@
-export interface Axis {
+export interface ContextMenuAxis {
   x: number;
   y: number;
 }
@@ -28,7 +28,7 @@ export interface ContextMenuProps {
   showIcon?: boolean;
 }
 
-export interface ItemContentProps {
+export interface ContextMenuItemContentProps {
   showIcon: boolean | undefined;
   item: ContextMenuItem;
   handler: Fn;

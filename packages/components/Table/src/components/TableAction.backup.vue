@@ -48,7 +48,7 @@
   import { useTableContext } from "../hooks/useTableContext";
   import { PopConfirmButton } from "@casta-fe-playground/components/Button";
   import { Dropdown } from "@casta-fe-playground/components/Dropdown";
-  import Icon from "@casta-fe-playground/components/Icon/index";
+  import Icon from "@casta-fe-playground/components/Icon";
   import { ActionItem, TableActionType } from "@casta-fe-playground/components/Table";
   import { MAX_ACTION_NUMBER } from "@casta-fe-playground/components/Table/src/const";
   // import { usePermission } from "@casta-fe-playground/hooks";

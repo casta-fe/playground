@@ -3,7 +3,7 @@
   import { Divider, Menu } from "ant-design-vue";
   import type { CSSProperties, FunctionalComponent } from "vue";
   import { computed, defineComponent, nextTick, onMounted, onUnmounted, ref, unref } from "vue";
-  import type { Axis, ContextMenuItem, ItemContentProps } from "./typing";
+  import type { ContextMenuAxis, ContextMenuItem, ContextMenuItemContentProps } from "./typing";
 
   const prefixCls = "context-menu";
 
@@ -14,7 +14,7 @@
     showIcon: { type: Boolean, default: true },
     axis: {
       // The position of the right mouse button click
-      type: Object as PropType<Axis>,
+      type: Object as PropType<ContextMenuAxis>,
       default() {
         return { x: 0, y: 0 };
       }
@@ -28,7 +28,7 @@
     }
   };
 
-  const ItemContent: FunctionalComponent<ItemContentProps> = (props) => {
+  const ItemContent: FunctionalComponent<ContextMenuItemContentProps> = (props) => {
     const { item } = props;
     return (
       <span

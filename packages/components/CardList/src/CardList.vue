@@ -6,7 +6,7 @@
     {{ sliderProp.width }}
     <div class="p-2 bg-white">
       <List
-        :grid="{ gutter: 5, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: grid }"
+        :grid="{ gutter: 5, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: cardListGrid }"
         :data-source="data"
         :pagination="paginationProp"
       >
@@ -16,7 +16,7 @@
             <Tooltip>
               <template #title>
                 <div class="w-50">每行显示数量</div>
-                <Slider id="slider" v-bind="sliderProp" v-model:value="grid" @change="sliderChange"
+                <Slider id="slider" v-bind="sliderProp" v-model:value="cardListGrid" @change="sliderChange"
               /></template>
               <Button><TableOutlined /></Button>
             </Tooltip>
@@ -82,7 +82,7 @@ import { BasicForm, useForm } from "@casta-fe-playground/components/Form";
 import { propTypes } from "@casta-fe-playground/utils";
 import { Button } from "@casta-fe-playground/components/Button";
 import { isFunction } from "@casta-fe-playground/utils";
-import { useSlider, grid } from "./data";
+import { useCardListSlider, cardListGrid } from "./data";
 const TypographyText = Typography.Text;
 
 const ListItem = List.Item;
@@ -116,7 +116,7 @@ export default defineComponent({
   },
   setup(props,{emit}) {
     // 获取slider属性
-    const sliderProp = computed(() => useSlider(4));
+    const sliderProp = computed(() => useCardListSlider(4));
     //数据
     const data = ref([]);
     // 切换每行个数
@@ -124,7 +124,7 @@ export default defineComponent({
     //修改pageSize并重新请求数据
 
     const height = computed(() => {
-      return `h-${120 - grid.value * 6}`;
+      return `h-${120 - cardListGrid.value * 6}`;
     });
 
      //表单提交

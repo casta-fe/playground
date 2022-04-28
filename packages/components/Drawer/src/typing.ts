@@ -13,7 +13,7 @@ export interface DrawerReturnMethods extends DrawerInstance {
   getVisible?: ComputedRef<boolean>;
 }
 
-type RegisterFn = (drawerInstance: DrawerInstance, uuid?: string) => void;
+type DrawerRegisterFn = (drawerInstance: DrawerInstance, uuid?: string) => void;
 
 interface ReturnInnerMethods extends DrawerInstance {
   closeDrawer: () => void;
@@ -22,9 +22,9 @@ interface ReturnInnerMethods extends DrawerInstance {
   getVisible?: ComputedRef<boolean>;
 }
 
-export type UseDrawerReturnType = [RegisterFn, DrawerReturnMethods];
+export type UseDrawerReturnType = [DrawerRegisterFn, DrawerReturnMethods];
 
-export type UseDrawerInnerReturnType = [RegisterFn, ReturnInnerMethods];
+export type UseDrawerInnerReturnType = [DrawerRegisterFn, ReturnInnerMethods];
 
 export interface DrawerFooterProps {
   showOkBtn: boolean;
