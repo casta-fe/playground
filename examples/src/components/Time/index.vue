@@ -1,7 +1,11 @@
 <template>
   <section class="test">
-    <h2>Time组件测试</h2>
-    <Time :value="state.value"></Time>
+    <h2>Time组件测试 relative</h2>
+    <Time :value="state.value" mode="relative"></Time>
+    <h2>Time组件测试 date</h2>
+    <Time :value="state.value" mode="date"></Time>
+    <h2>Time组件测试 datetime</h2>
+    <Time :value="state.value" mode="datetime"></Time>
   </section>
 </template>
 
@@ -15,7 +19,7 @@
     },
     setup() {
       const state = reactive({
-        value:'1994//04/27'
+        value:new Date()
       })
       return {
         state
