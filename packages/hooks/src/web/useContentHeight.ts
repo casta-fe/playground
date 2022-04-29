@@ -36,7 +36,7 @@ export function useContentHeight(
 ) {
   const contentHeight: Ref<Nullable<number>> = ref(null);
   // const { footerHeightRef: layoutFooterHeightRef } = useLayoutHeight();
-  const layoutFooterHeightRef = 40
+  const layoutFooterHeightRef = ref(40)
   let compensationHeight: CompensationHeight = {
     useLayoutFooter: true
   };

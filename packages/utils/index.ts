@@ -161,7 +161,7 @@ export function getPropByPath(obj, path, returnType = "all") {
   }
 }
 
-export * from "./src/cipher";
+export * from "./src/cipher";  
 export * from "./src/color";
 export * from "./src/dateUtil";
 export * from "./src/domUtils";

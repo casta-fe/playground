@@ -30,10 +30,11 @@ export class AesEncryption {
   }
 
   get getOptions() {
+    console.log(ECB,pkcs7,this.iv)
     return {
-      mode: ECB,
-      padding: pkcs7,
-      iv: this.iv
+      // mode: ECB,
+      // padding: pkcs7,
+      // iv: this.iv
     };
   }
 

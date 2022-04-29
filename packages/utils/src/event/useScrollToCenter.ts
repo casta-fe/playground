@@ -12,7 +12,7 @@ export const useScrollToCenter = (
   let currentStopFn: Nullable<Fn>;
   const scrollToCenter = <T extends HTMLElement = HTMLButtonElement>(buttonEl: T) => {
     currentStopFn?.();
-    const buttonGroupEl = (scrollRef.value as ComponentElRef)?.$el ?? scrollRef.value;
+    const buttonGroupEl = ((scrollRef.value as ComponentElRef)?.$el ?? scrollRef.value) as any;
 
     // undefined || null
     if (undefined == buttonGroupEl) return;

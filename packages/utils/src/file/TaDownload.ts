@@ -50,7 +50,7 @@ const typeDic = {
   movie: "video/x-sgi-movie"
 };
 
-function downLoadCallBack(res, name, suffix) {
+export function downLoadCallBack(res, name, suffix) {
   if (!res) {
     return;
   }
@@ -67,10 +67,10 @@ function downLoadCallBack(res, name, suffix) {
         createMessage.warning("请求出错，请稍候重试");
       }
     } catch (err) {
-      if (window.navigator.msSaveBlob) {
+      if ((window.navigator as any).msSaveBlob) {
         // IE以及IE内核的浏览器
         try {
-          window.navigator.msSaveBlob(res, name); // res为接口返回数据，这里请求的时候已经处理了，如果没处理需要在此之前自行处理var data = new Blob([res.data]) 注意这里需要是数组形式的,fileName就是下载之后的文件名
+          (window.navigator as any).msSaveBlob(res, name); // res为接口返回数据，这里请求的时候已经处理了，如果没处理需要在此之前自行处理var data = new Blob([res.data]) 注意这里需要是数组形式的,fileName就是下载之后的文件名
           // window.navigator.msSaveOrOpenBlob(res, fileName); //此方法类似上面的方法，区别可自行百度
         } catch (e) {
           console.log(e);
@@ -108,6 +108,8 @@ const download=(data, fileName?)=> {
       return;
     }
     const file: FileItemType = { ...data };
+    console.log(fileName,file);
+
     // downloadFile(file.id).then(async (res) => {
     //   const El: HTMLAnchorElement = window.document.createElement("A");
     //   El.setAttribute("download", fileName || file.name);
