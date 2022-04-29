@@ -11,7 +11,7 @@ export default defineComponent({
   inheritAttrs: false,
   props: TimeLineListProps,
   emits: TimeLineListEmits,
-  setup(props, { emit, slots }) {
+  setup(props, { emit,slots }) {
     const handleLoadingMore = () => {
       emit("loadingMore");
     };

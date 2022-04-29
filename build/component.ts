@@ -34,7 +34,7 @@ const buildEachComponent = async () => {
     const config = {
       input,
       plugins: [nodeResolve(), typescript(), vue(), vueJsx(), commonjs()],
-      external: (id) => /^vue/.test(id) || /^ant-design-vue/.test(id) ||  /^@casta-fe-playground/.test(id) // 排除掉vue和@w-plus的依赖
+      external: (id: string) => /^vue/.test(id) || /^ant-design-vue/.test(id) ||  /^@casta-fe-playground/.test(id) // 排除掉vue和@w-plus的依赖
     };
     const bundle = await rollup(config);
     const options = Object.values(buildConfig).map((config) => ({
@@ -119,7 +119,7 @@ async function genTypes() {
 
 function copyTypes() {
   const src = path.resolve(outDir, "types/components/");
-  const copy = (module) => {
+  const copy = (module: string) => {
     const output = path.resolve(outDir, module, "components");
     return () => run(`cp -r ${src}/* ${output}`);
   };
