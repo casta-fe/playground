@@ -58,7 +58,7 @@ import { BasicTable, TableAction, TableImg } from "@casta-fe-playground/componen
 import { TaTableTags } from "@casta-fe-playground/components/TableTags";
 // import { TaUpload } from "@casta-fe-playground/components/TaUpload";
 import { Time } from "@casta-fe-playground/components/Time";
-import { TimeLineList } from "@casta-fe-playground/components/TimelineList";
+import { TimeLine } from "@casta-fe-playground/components/Timeline";
 import { BasicTree } from "@casta-fe-playground/components/Tree";
 import { BasicUpload } from "@casta-fe-playground/components/Upload";
 import type { App } from "vue";
@@ -123,7 +123,7 @@ const components = [
   StrengthMeter,
   TaTableTags,
   Time,
-  TimeLineList,
+  TimeLine,
   BasicTree,
   BasicUpload
 ];

@@ -20,7 +20,7 @@ const buildFull = async () => {
   const config = {
     input: path.resolve(tgRoot, "index.ts"), // 打包入口
     plugins: [nodeResolve(), typescript(), vue(), vueJsx(), commonjs()],
-    external: (id) => /^vue/.test(id) || /^ant-design-vue/.test(id) // 打包的时候不打包vue代码
+    external: (id: string) => /^vue/.test(id) || /^ant-design-vue/.test(id) // 打包的时候不打包vue代码
   };
 
   // 组件库两种使用方式 import 导入组件库 在浏览器中使用script

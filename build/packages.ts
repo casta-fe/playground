@@ -9,7 +9,8 @@ import ts from 'gulp-typescript';
 export const buildPackages = (dirName: string, name: string) => {
   const tasks = Object.entries(buildConfig).map(([, config]) => {
     const tsConfig = path.resolve(projectRoot, 'tsconfig.json');
-    const inputs = ['**/*.ts', '!gulpfile.ts', '!node_modules'];
+    const inputs = ['index.ts', 'src/*/*.ts', '!gulpfile.ts', '!node_modules'];
+    // const inputs = ['**/*.ts', '!gulpfile.ts', '!node_modules'];
     const output = path.resolve(dirName, 'dist', config.output.name);
     // 安装依赖gulp-typescript
     return series(
