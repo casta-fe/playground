@@ -23,6 +23,6 @@ export * from './src/web/useAppInject'
 export * from "./src/web/useContentHeight"
 export * from "./src/web/useContextMenu"
 export * from './src/web/useCopyToClipboard'
-export * from './src/web/useMessage'
+// export * from './src/web/useMessage'
 export * from "./src/web/usePagination"
 export * from "./src/web/useSortable"

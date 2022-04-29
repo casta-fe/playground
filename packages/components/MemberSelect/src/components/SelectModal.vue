@@ -119,7 +119,7 @@
   import { letterItem, LetterItemList } from "../types";
   import FirstLetter from "./FirstLetter.vue";
   import { Button } from "@casta-fe-playground/components/Button";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   const { createConfirm } = useMessage();
   export default defineComponent({
     components: {

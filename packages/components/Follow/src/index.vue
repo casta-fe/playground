@@ -20,7 +20,7 @@
 <script lang="ts">
   import { defineComponent, reactive, toRefs, watch } from "vue";
   import { Button } from "@casta-fe-playground/components/Button";
-  import { useMessage } from "@casta-fe-playground/hooks/index";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   //  1 企业 2投资项目 3退出项目 4基金 5 投资人
   interface FollowType {
     id: number | string;

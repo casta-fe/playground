@@ -66,7 +66,7 @@
   import props from "./props";
   import { Button } from "@casta-fe-playground/components/Button";
   import download from "@casta-fe-playground/utils/src/file/TaDownload";
-  import { useMessage } from "@casta-fe-playground/hooks/index";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   export default defineComponent({
     components: {
       Modal,

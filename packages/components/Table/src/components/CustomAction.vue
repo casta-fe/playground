@@ -45,7 +45,7 @@
   import { Button } from "@casta-fe-playground/components/Button";
   // import { ExpExcelModal, ExportModalResult, jsonToSheetXlsx } from "@casta-fe-playground/components/Excel";
   // import { useModal } from "@casta-fe-playground/components/Modal";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   import { componentSetting } from "@casta-fe-playground/settings";
   import { Emitter } from "@casta-fe-playground/utils";
 

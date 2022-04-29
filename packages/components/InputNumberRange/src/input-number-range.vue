@@ -31,7 +31,7 @@
   import { toRefs, watch } from "vue";
   import { defineComponent, reactive } from "vue-demi";
   import { inputNumberRangeProps,inputNumberRangeEmits } from "./input-number-range";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   const { createMessage } = useMessage();
   export type InputNumberRangeState={
     min:number|string,

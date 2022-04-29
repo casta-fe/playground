@@ -176,8 +176,8 @@ export * from "./src/uuid";
 export * from './src/event/index'
 export * from './src/event/useScrollToCenter'
 
-// src/factory
-export * from './src/factory/createAsyncComponent'
+// // src/factory
+// export * from './src/factory/createAsyncComponent'
 
 // src/file
 export * from './src/file/base64Conver'

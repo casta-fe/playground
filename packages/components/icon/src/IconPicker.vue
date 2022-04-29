@@ -74,7 +74,7 @@
   import SvgIcon from "./SvgIcon.vue";
   import { ScrollContainer } from "@casta-fe-playground/components/Container";
   import { useCopyToClipboard } from "@casta-fe-playground/hooks";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   import { usePagination } from "@casta-fe-playground/hooks";
   import { propTypes } from "@casta-fe-playground/utils";
 

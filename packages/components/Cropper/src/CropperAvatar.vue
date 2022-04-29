@@ -41,7 +41,7 @@
   } from "vue";
   import CopperModal from "./CopperModal.vue";
   import { useModal } from "@casta-fe-playground/components/Modal";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   import type { ButtonProps } from "@casta-fe-playground/components/Button";
   import Icon from "@casta-fe-playground/components/Icon";
 

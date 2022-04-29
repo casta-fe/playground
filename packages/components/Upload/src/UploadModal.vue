@@ -48,7 +48,7 @@
   //   import { BasicTable, useTable } from '/@/components/Table';
   // hooks
   import { useUploadType } from "./useUpload";
-  import { useMessage } from "@casta-fe-playground/hooks";
+  import { useMessage } from "@casta-fe-playground/components/useMessage";
   //   types
   import { FileItem, UploadResultStatus } from "./typing";
   import { basicProps } from "./props";

@@ -5,8 +5,9 @@
  */
 import { isArray } from "../is";
 // import { downloadFile, multiDownLoad } from "/@/api/file";
-import { useMessage } from "@casta-fe-playground/hooks/src/web/useMessage";
-const { createMessage } = useMessage();
+// 不允许在utils中直接调用组件，用callback抛出去在组件使用的地方调用
+// import { useMessage } from "@casta-fe-playground/hooks/src/web/useMessage";
+// const { createMessage } = useMessage();
 
 const typeDic = {
   docx: "application/msword",
@@ -62,9 +63,9 @@ export function downLoadCallBack(res, name, suffix) {
       const errorData = JSON.parse(result as string);
       const { code, msg } = errorData;
       if (code == "5001") {
-        createMessage.warning(msg);
+        // createMessage.warning(msg);
       } else {
-        createMessage.warning("请求出错，请稍候重试");
+        // createMessage.warning("请求出错，请稍候重试");
       }
     } catch (err) {
       if ((window.navigator as any).msSaveBlob) {
@@ -92,7 +93,7 @@ export function downLoadCallBack(res, name, suffix) {
 const download=(data, fileName?)=> {
   if (isArray(data)) {
     if (data.length == 0) {
-      createMessage.warning("请选择要下载的文件");
+      // createMessage.warning("请选择要下载的文件");
       return;
     }
     const ids: number[] = [];
@@ -104,7 +105,7 @@ const download=(data, fileName?)=> {
     // });
   } else {
     if (!data || !data.id) {
-      createMessage.warning("请选择要下载的文件");
+      // createMessage.warning("请选择要下载的文件");
       return;
     }
     const file: FileItemType = { ...data };

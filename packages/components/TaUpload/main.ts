@@ -1,4 +1,4 @@
-import { useMessage } from "@casta-fe-playground/hooks";
+import { useMessage } from "@casta-fe-playground/components/useMessage";
 import { nextTick, ref, watch, inject } from "vue";
 import { useHyperlinkForm } from "./hooks";
 import { BasicPropsType } from "./types";
