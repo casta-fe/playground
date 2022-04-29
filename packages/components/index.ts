@@ -36,3 +36,4 @@ export * from "./TimeLine"; // 导出的是函数
 export * from "./Transition"; // 导出的是函数
 export * from "./Tree";
 export * from "./Upload";
+export * from "./TaUpload";

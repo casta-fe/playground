@@ -14,6 +14,7 @@
   <TableTagsPage />
   <CardListPage />
   <FileViewPage />
+  <TaUpload />
 </template>
 
 <script lang="ts">
@@ -27,6 +28,7 @@ import InputPage from './components/Input/index.vue'
 import TableTagsPage from './components/tableTags/index.vue'
 import CardListPage from './components/CardList/index.vue'
 import FileViewPage from './components/fileView/index'
+import TaUpload from './components/TaUpload.vue'
 
 
 import { defineComponent } from 'vue';
@@ -42,7 +44,8 @@ export default defineComponent({
     InputPage,
     TableTagsPage,
     CardListPage,
-    FileViewPage
+    FileViewPage,
+    TaUpload
   },
   setup(){
     return {}
