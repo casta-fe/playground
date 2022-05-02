@@ -290,7 +290,7 @@
 </script>
 
 <style lang="less" scoped>
-  @import "../../index.less";
+  @import "../../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-table-filter";
 
   .@{prefix-cls} {

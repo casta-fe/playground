@@ -13,7 +13,6 @@ export const buildPackages = (dirName: string, name: string) => {
     const inputs = ['**/*.ts', typingsPath, '!gulpfile.ts', '!node_modules'];
     const output = path.resolve(dirName, 'dist', config.output.name);
     // 安装依赖gulp-typescript
-    console.log('tsConfigtsConfigtsConfig',inputs)
     return series(
       // 处理ts文件
       withTaskName(`build: ${dirName}`, () => {

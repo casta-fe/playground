@@ -1,7 +1,3 @@
-<!--
- * @Author: Castianta
- * @Description: Arrow component with animation
--->
 <template>
   <span :class="getClass">
     <Icon icon="ion:chevron-forward" :style="$attrs.iconStyle" />
@@ -47,7 +43,7 @@
   });
 </script>
 <style lang="less" scoped>
-  @import "../index.less";
+  @import "../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-arrow";
 
   .@{prefix-cls} {

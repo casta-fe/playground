@@ -56,7 +56,7 @@
       FormItem: Form.Item,
       Button,
       BasicArrow,
-      [Col.name]: Col
+      ACol: Col
     },
     props: {
       showActionButtonGroup: propTypes.bool.def(true),

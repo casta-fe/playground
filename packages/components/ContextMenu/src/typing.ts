@@ -23,7 +23,7 @@ export interface ContextMenuProps {
   styles?: any;
   items: ContextMenuItem[];
   customEvent?: MouseEvent;
-  axis?: Axis;
+  axis?: ContextMenuAxis;
   width?: number;
   showIcon?: boolean;
 }

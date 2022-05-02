@@ -2,11 +2,11 @@
   <div :class="prefixCls" :style="getStyle" v-if="showFooter || $slots.footer">
     <template v-if="!$slots.footer">
       <slot name="insertFooter"></slot>
-      <a-button v-bind="cancelButtonProps" @click="handleClose" class="mr-2" v-if="showCancelBtn">
+      <Button v-bind="cancelButtonProps" @click="handleClose" class="mr-2" v-if="showCancelBtn">
         {{ cancelText }}
-      </a-button>
+      </Button>
       <slot name="centerFooter"></slot>
-      <a-button
+      <Button
         :type="okType"
         @click="handleOk"
         v-bind="okButtonProps"
@@ -15,7 +15,7 @@
         v-if="showOkBtn"
       >
         {{ okText }}
-      </a-button>
+      </Button>
       <slot name="appendFooter"></slot>
     </template>
 
@@ -27,7 +27,7 @@
 <script lang="ts">
   import type { CSSProperties } from "vue";
   import { defineComponent, computed } from "vue";
-
+  import {Button} from "@casta-fe-playground/components/Button"
   import { footerProps } from "../props";
   export default defineComponent({
     name: "BasicDrawerFooter",
@@ -38,6 +38,7 @@
         default: "60px"
       }
     },
+    components: {Button},
     emits: ["ok", "close"],
     setup(props, { emit }) {
       const prefixCls = "ta-basic-drawer-footer";

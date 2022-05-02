@@ -32,7 +32,7 @@ export const run = async (command: string) => {
 // 重写打包后的@casta-fe-playground 路径
 export const pathRewriter = (format: string) => {
   return (id: string) => {
-    id = id.replaceAll('@casta-fe-playground', `casta-fe-playground/${format}`);
+    id = id.replace(/\@tg\-ui/g, `tg-ui/${format}`);
     return id;
   };
 };

@@ -21,10 +21,9 @@
     "typeRoots": ["./node_modules/@types/", "./typings/"],
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "paths": {
-      "/@/*": ["packages/*"],
-      "/#/*": ["typings/*"]
-    }
+    "types": [
+      "unplugin-vue-define-options"
+    ]
   },
   "include": [
     "examples/**/*.ts",

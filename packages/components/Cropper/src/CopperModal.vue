@@ -24,12 +24,12 @@
         <div :class="`${prefixCls}-toolbar`">
           <Upload :fileList="[]" accept="image/*" :beforeUpload="handleBeforeUpload">
             <Tooltip title="选择图片" placement="bottom">
-              <a-button size="small" preIcon="ant-design:upload-outlined" type="primary" />
+              <Button size="small" preIcon="ant-design:upload-outlined" type="primary" />
             </Tooltip>
           </Upload>
           <Space>
             <Tooltip title="重置" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="ant-design:reload-outlined"
                 size="small"
@@ -38,7 +38,7 @@
               />
             </Tooltip>
             <Tooltip title="逆时针旋转" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="ant-design:rotate-left-outlined"
                 size="small"
@@ -47,7 +47,7 @@
               />
             </Tooltip>
             <Tooltip title="顺时针旋转" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="ant-design:rotate-right-outlined"
                 size="small"
@@ -56,7 +56,7 @@
               />
             </Tooltip>
             <Tooltip title="水平翻转" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="vaadin:arrows-long-h"
                 size="small"
@@ -65,7 +65,7 @@
               />
             </Tooltip>
             <Tooltip title="垂直翻转" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="vaadin:arrows-long-v"
                 size="small"
@@ -74,7 +74,7 @@
               />
             </Tooltip>
             <Tooltip title="放大" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="ant-design:zoom-in-outlined"
                 size="small"
@@ -83,7 +83,7 @@
               />
             </Tooltip>
             <Tooltip title="缩小" placement="bottom">
-              <a-button
+              <Button
                 type="primary"
                 preIcon="ant-design:zoom-out-outlined"
                 size="small"
@@ -116,6 +116,7 @@
   import { Avatar, Space, Tooltip, Upload } from "ant-design-vue";
   import { defineComponent, ref } from "vue";
   import CropperImage from "./Cropper.vue";
+  import {Button} from "@casta-fe-playground/components/Button"
   import type { Cropper, CropperCropendResult } from "./typing";
 
   type apiFunParams = { file: Blob; name: string; filename: string };
@@ -129,7 +130,7 @@
 
   export default defineComponent({
     name: "CropperModal",
-    components: { BasicModal, Space, CropperImage, Upload, Avatar, Tooltip },
+    components: { Button, BasicModal, Space, CropperImage, Upload, Avatar, Tooltip },
     props,
     emits: ["uploadSuccess", "register"],
     setup(props, { emit }) {

@@ -1,3 +1,4 @@
+<script lang="tsx">
   import type { ReplaceFields, Keys, CheckKeys, TreeActionType, TreeItem } from "./typing";
   import {
     defineComponent,
@@ -20,9 +21,9 @@
   import { extendSlots, getSlot } from "@casta-fe-playground/utils";
   import { filter, treeToList } from "@casta-fe-playground/utils";
   import { useTree } from "./useTree";
-  import { useContextMenu } from "@casta-fe-playground/hooks";
+  import { useContextMenu } from "@casta-fe-playground/components/useContextMenu";
   import { basicProps } from "./props";
-  import { CreateContextOptions } from "/@/components/ContextMenu";
+  // import { CreateContextOptions } from "@casta-fe-playground/components/ContextMenu";
   import { CheckEvent } from "./typing";
   interface State {
     expandedKeys: Keys;
@@ -141,7 +142,7 @@
 
       async function handleRightClick({ event, node }: Recordable) {
         const { rightMenuList: menuList = [], beforeRightClick } = props;
-        let contextMenuOptions: CreateContextOptions = { event, items: [] };
+        let contextMenuOptions: any = { event, items: [] };
 
         if (beforeRightClick && isFunction(beforeRightClick)) {
           let result = await beforeRightClick(node, event);
@@ -472,3 +473,53 @@
       };
     }
   });
+
+</script>
+<style lang="less">
+@import "../../../theme-chalk/src/var";
+  @prefix-cls: ~"@{namespace}-basic-tree";
+
+  .@{prefix-cls} {
+    background-color: @component-background;
+
+    .ant-tree-node-content-wrapper {
+      position: relative;
+
+      .ant-tree-title {
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &-title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-right: 10px;
+
+      &:hover {
+        .@{prefix-cls}__action {
+          visibility: visible;
+        }
+      }
+    }
+
+    &__content {
+      overflow: hidden;
+    }
+
+    &__actions {
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      display: flex;
+    }
+
+    &__action {
+      margin-left: 4px;
+      visibility: hidden;
+    }
+  }
+</style>

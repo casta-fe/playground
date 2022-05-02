@@ -41,7 +41,7 @@
 </template>
 <script lang="ts">
   import { MoreOutlined } from "@ant-design/icons-vue";
-  import { Divider, Tooltip, TooltipProps } from "ant-design-vue";
+  import { Divider, Tooltip, TooltipProps, Button } from "ant-design-vue";
   import { computed, defineComponent, PropType, toRaw, unref } from "vue";
   import { ACTION_COLUMN_FLAG, MAX_ACTION_NUMBER } from "../const";
   import { useTableContext } from "../hooks/useTableContext";
@@ -54,7 +54,7 @@
 
   export default defineComponent({
     name: "TableAction",
-    components: { Icon, PopConfirmButton, Divider, Dropdown, MoreOutlined, Tooltip, ModalButton },
+    components: { Icon, PopConfirmButton, Divider, Dropdown, MoreOutlined, Tooltip, ModalButton, AButton: Button },
     props: {
       actions: {
         type: Array as PropType<ActionItem[]>,
@@ -193,7 +193,7 @@
   });
 </script>
 <style lang="less">
-  @import "../../index.less";
+  @import "../../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-table-action";
 
   .@{prefix-cls} {

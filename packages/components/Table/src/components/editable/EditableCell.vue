@@ -397,7 +397,7 @@
   });
 </script>
 <style lang="less">
-  @import "../../../index.less";
+  @import "../../../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-editable-cell";
 
   .edit-cell-align-left {

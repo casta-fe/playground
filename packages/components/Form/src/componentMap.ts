@@ -29,7 +29,7 @@ import { IconPicker } from "@casta-fe-playground/components/Icon";
 import { MemberSelect } from "@casta-fe-playground/components/MemberSelect";
 import { StrengthMeter } from "@casta-fe-playground/components/StrengthMeter";
 import { BasicUpload } from "@casta-fe-playground/components/Upload";
-import SearchableApiSelect from "./components/SearchableApiSelect";
+import SearchableApiSelect from "./components/SearchableApiSelect.vue";
 
 const componentMap = new Map<ComponentType, Component>();
 

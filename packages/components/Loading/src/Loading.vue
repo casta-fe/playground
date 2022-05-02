@@ -47,7 +47,7 @@
   });
 </script>
 <style lang="less">
-  @import "../index.less";
+  @import "../../../theme-chalk/src/var";
   .full-loading {
     position: fixed;
     top: 0;

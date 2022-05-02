@@ -358,7 +358,7 @@
 </script>
 
 <style lang="less">
-  @import "../../index.less";
+  @import "../../../../theme-chalk/src/var";
   .member-select {
     border-radius: @border-radius-base;
     border: 1px solid @border-color-light;

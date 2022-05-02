@@ -16,14 +16,14 @@
   </Button>
 </template>
 
-<script lang="ts">
-// @ts-nocheck
-import { defineComponent } from "vue";
-export default defineComponent({
-  name: "BasicButton",
-  inheritAttrs: false
-});
-</script>
+// <script lang="ts">
+// // @ts-nocheck
+// import { defineComponent } from "vue";
+// export default defineComponent({
+//   name: "BasicButton",
+//   inheritAttrs: false
+// });
+// </script>
 <script lang="ts" setup>
   import { Button } from "ant-design-vue";
   import { computed, unref } from "vue";

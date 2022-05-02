@@ -65,7 +65,7 @@
   });
 </script>
 <style lang="less">
-  @import "../../index.less";
+  @import "../../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-table-img";
 
   .@{prefix-cls} {

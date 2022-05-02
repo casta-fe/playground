@@ -11,14 +11,14 @@
       </div>
       <img :src="sourceValue" v-if="sourceValue" alt="avatar" />
     </div>
-    <a-button
+    <Button
       :class="`${prefixCls}-upload-btn`"
       @click="openModal"
       v-if="showBtn"
       v-bind="btnProps"
     >
       {{ btnText ? btnText : "选择图片" }}
-    </a-button>
+    </Button>
 
     <CopperModal
       @register="register"
@@ -43,6 +43,7 @@
   import { useModal } from "@casta-fe-playground/components/Modal";
   import { useMessage } from "@casta-fe-playground/components/useMessage";
   import type { ButtonProps } from "@casta-fe-playground/components/Button";
+  import {Button} from "@casta-fe-playground/components/Button"
   import Icon from "@casta-fe-playground/components/Icon";
 
   const props = {
@@ -56,7 +57,7 @@
 
   export default defineComponent({
     name: "CropperAvatar",
-    components: { CopperModal, Icon },
+    components: { Button,CopperModal, Icon },
     props,
     emits: ["update:value", "change"],
     setup(props, { emit, expose }) {

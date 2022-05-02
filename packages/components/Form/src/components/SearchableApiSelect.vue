@@ -1,4 +1,5 @@
-import { Empty, Select as TaSelect, Spin } from "ant-design-vue";
+<script lang="tsx">
+import { Empty, Select, Spin } from "ant-design-vue";
 import {
   computed,
   createVNode,
@@ -189,7 +190,7 @@ export default defineComponent({
     );
 
     return () => (
-      <TaSelect
+      <Select
         vModel={[selecterdOption.value, "value"]}
         options={options.value}
         showSearch={true}
@@ -234,3 +235,5 @@ export default defineComponent({
     );
   }
 });
+
+</script>

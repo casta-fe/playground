@@ -139,7 +139,7 @@
   });
 </script>
 <style lang="less">
-  @import "../index.less";
+  @import "../../../theme-chalk/src/var";
   
   @default-height: 42px !important;
   @small-height: 36px !important;

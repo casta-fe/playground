@@ -41,7 +41,7 @@
   import UploadModal from "./UploadModal.vue";
   import UploadPreviewModal from "./UploadPreviewModal.vue";
   import { Icon } from "@casta-fe-playground/components/Icon";
-  import { Tooltip } from "ant-design-vue";
+  import { Tooltip, ButtonGroup, Button } from "ant-design-vue";
   import { useModal } from "@casta-fe-playground/components/Modal";
   import { uploadContainerProps } from "./props";
   import { omit } from "lodash-es";
@@ -49,7 +49,7 @@
 
   export default defineComponent({
     name: "BasicUpload",
-    components: { UploadModal, UploadPreviewModal, Icon, Tooltip },
+    components: { UploadModal, UploadPreviewModal, Icon, Tooltip, AButtonGroup: ButtonGroup, AButton: Button },
     props: uploadContainerProps,
     emits: ["change", "delete", "preview-delete", "update:value"],
 

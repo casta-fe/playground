@@ -70,7 +70,7 @@
   });
 </script>
 <style lang="less">
-  @import "../index.less";
+  @import "../../../theme-chalk/src/var";
   .file-table {
     width: 100%;
     border-collapse: collapse;

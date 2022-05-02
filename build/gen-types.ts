@@ -57,7 +57,7 @@ export const genEntryTypes = async () => {
 
 export const copyEntryTypes = () => {
   const src = path.resolve(outDir, 'entry/types');
-  const copy = (module) => {
+  const copy = (module: 'esm' | 'cjs') => {
     return parallel(
       withTaskName(`copyEntryTypes:${module}`, async () => {
         await run(

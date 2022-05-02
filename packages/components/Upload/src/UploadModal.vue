@@ -43,7 +43,7 @@
 </template>
 <script lang="ts">
   import { defineComponent, reactive, ref, toRefs, unref, computed, PropType } from "vue";
-  import { Upload, Alert } from "ant-design-vue";
+  import { Upload, Alert, Button } from "ant-design-vue";
   import { BasicModal, useModalInner } from "@casta-fe-playground/components/Modal";
   //   import { BasicTable, useTable } from '/@/components/Table';
   // hooks
@@ -59,7 +59,7 @@
   import FileList from "./FileList.vue";
 
   export default defineComponent({
-    components: { BasicModal, Upload, Alert, FileList },
+    components: { BasicModal, Upload, Alert, FileList, AButton: Button },
     props: {
       ...basicProps,
       previewFileList: {

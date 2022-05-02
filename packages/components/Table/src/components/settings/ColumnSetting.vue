@@ -110,7 +110,7 @@
     unref,
     computed
   } from "vue";
-  import { Tooltip, Popover, Checkbox, Divider } from "ant-design-vue";
+  import { Tooltip, Popover, Checkbox, Divider, Button } from "ant-design-vue";
   import { SettingOutlined, DragOutlined } from "@ant-design/icons-vue";
   import { Icon } from "@casta-fe-playground/components/Icon";
   import { ScrollContainer } from "@casta-fe-playground/components/Container";
@@ -142,7 +142,8 @@
       DragOutlined,
       ScrollContainer,
       Divider,
-      Icon
+      Icon,
+      AButton: Button
     },
     emits: ["columns-change"],
 
@@ -382,7 +383,7 @@
   });
 </script>
 <style lang="less">
-  @import "../../../index.less";
+  @import "../../../../../theme-chalk/src/var";
   @prefix-cls: ~"@{namespace}-basic-column-setting";
 
   .table-column-drag-icon {

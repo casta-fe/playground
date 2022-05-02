@@ -12,7 +12,7 @@
             :disabled="item.disabled"
             size="small"
           >
-            <!-- <a-popconfirm
+            <a-popconfirm
               v-if="popconfirm && item.popConfirm"
               v-bind="getPopConfirmAttrs(item.popConfirm)"
               :getPopupContainer="item.getPopupContainer"
@@ -25,7 +25,7 @@
                 <Icon :icon="item.icon" v-if="item.icon" />
                 <span class="ml-1">{{ item.text }}</span>
               </div>
-            </a-popconfirm> -->
+            </a-popconfirm>
             <ModalButton v-if="popconfirm && item.popConfirm" v-bind="item" :isInDropDown="true">
               <template #icon v-if="item.popConfirm.icon">
                 <Icon :icon="item.popConfirm.icon" />

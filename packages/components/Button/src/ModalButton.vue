@@ -84,7 +84,7 @@
 </script>
 
 <style lang="less">
-  @import "../index.less";
+  @import "../../../theme-chalk/src/var";
   .modal-button-confirm.ant-modal-confirm {
     .ant-modal-confirm-btns {
       display: flex;
