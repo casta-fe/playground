@@ -1,5 +1,9 @@
 import type { Slots } from "vue";
-import { isFunction } from "../../index";
+// import { isFunction } from "../../index";
+
+function isFunction(val: unknown): val is Function {
+  return typeof val === "function";
+}
 
 /**
  * @description:  Get slot to prevent empty error

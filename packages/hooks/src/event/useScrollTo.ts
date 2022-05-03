@@ -1,5 +1,5 @@
 import { ref, unref } from "vue";
-import { isFunction, isUnDef } from "@casta-fe-playground/utils";
+import { isFunction, isUnDef } from "@casta-fe-playground/utils/src/is";
 export type DirectionType = "scrollTop" | "scrollLeft";
 
 export interface ScrollToParams {

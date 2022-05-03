@@ -2,6 +2,7 @@ import { parallel, series } from 'gulp';
 import { genTypes } from './gen-types';
 import { run, withTaskName } from './utils';
 import { outDir, tgRoot } from './utils/paths';
+require('events').EventEmitter.defaultMaxListeners = 0;
 
 // gulp 不打包只做代码转化 使用它做流程控制
 
