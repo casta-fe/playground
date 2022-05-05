@@ -40,8 +40,8 @@
   import G6 from "@antv/g6/dist/g6.min";
   import { useDebounceFn } from "@vueuse/core";
   import { defineComponent, nextTick, PropType, ref, toRaw, unref, watch } from "vue";
-  import { useWindowSizeFn } from "/@/hooks/event/useWindowSizeFn";
-  import { addClass, hasClass, removeClass } from "/@/utils/domUtils";
+  import { useWindowSizeFn } from "@casta-fe-playground/hooks";
+  import { addClass, hasClass, removeClass } from "@casta-fe-playground/utils";
 
   interface AntvG6ContainerData {
     nodes: any[];

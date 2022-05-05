@@ -66,8 +66,8 @@
   import type { PropType } from "vue";
   import { computed, defineComponent, nextTick, ref, unref, watch } from "vue";
   import { NodeStatus } from "./types";
-  import { Button } from "/@/components/Button";
-  import { useWindowSizeFn } from "/@/hooks/event/useWindowSizeFn";
+  import { Button } from "@casta-fe-playground/components/Button";
+  import { useWindowSizeFn } from "@casta-fe-playground/hooks";
 
   interface AntvG6ContainerData {
     nodes: any[];
